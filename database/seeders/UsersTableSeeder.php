@@ -27,6 +27,36 @@ class UsersTableSeeder extends Seeder
                 'created_by' => 'Super Admin',
                 'updated_at' => now()
             ],
+            [
+                'name' => 'Robiul Papon',
+                'email' => 'rabiulpapon77@yahoo.com',
+                'email_verified_at' => now(),
+                'role_id' => 1,
+                'password' => Hash::make('pass@123'),
+                'created_at' => now(),
+                'created_by' => 'Super Admin',
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Ananya Hasan',
+                'email' => 'ananyahasan25@gmail.com',
+                'email_verified_at' => now(),
+                'role_id' => 1,
+                'password' => Hash::make('pass@123'),
+                'created_at' => now(),
+                'created_by' => 'Super Admin',
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Mashfiq Chowdhury',
+                'email' => 'mashfiq@ibsssbd.com',
+                'email_verified_at' => now(),
+                'role_id' => 1,
+                'password' => Hash::make('pass@123'),
+                'created_at' => now(),
+                'created_by' => 'Super Admin',
+                'updated_at' => now()
+            ],
         ];
         DB::table('users')->insert($users);
     }
