@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? checkValidation('1') : false"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -37,15 +37,16 @@
                                             name="Response By Calling Name"
                                             vid="response_calling_by_name"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.response_calling_by_name"
                                                 row
                                                 :error-messages="errors"
                                                 :success="valid && dirty"
                                                 class="my-0"
                                             >
-                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                <v-radio :value="false" label="No"></v-radio>
+                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                <v-radio value="No" label="No"></v-radio>
+                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -53,7 +54,7 @@
                                     <v-col md="8" class="py-0">
                                         <v-row>
                                             <v-col cols="3" class="py-0">
-                                                (আ) |a|: 
+                                                (আ) |a|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
@@ -62,20 +63,21 @@
                                                     name="Eyelid surgery"
                                                     vid="screening_by_ling_sound_a"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.screening_by_ling_sound_a"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
                                                         class="my-0"
                                                     >
-                                                        <v-radio :value="true" label="Yes"></v-radio>
-                                                        <v-radio :value="false" label="No"></v-radio>
+                                                        <v-radio value="Yes" label="Yes"></v-radio>
+                                                        <v-radio value="No" label="No"></v-radio>
+                                                        <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                     </v-radio-group>
                                                 </validation-provider>
                                             </v-col>
                                             <v-col cols="3" class="py-0">
-                                                (ই) |i|: 
+                                                (ই) |i|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
@@ -84,20 +86,21 @@
                                                     name="Eyelid surgery"
                                                     vid="screening_by_ling_sound_i"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.screening_by_ling_sound_i"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
                                                         class="my-0"
                                                     >
-                                                        <v-radio :value="true" label="Yes"></v-radio>
-                                                        <v-radio :value="false" label="No"></v-radio>
+                                                        <v-radio value="Yes" label="Yes"></v-radio>
+                                                        <v-radio value="No" label="No"></v-radio>
+                                                        <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                     </v-radio-group>
                                                 </validation-provider>
                                             </v-col>
                                             <v-col cols="3" class="py-0">
-                                                (উ) |u|: 
+                                                (উ) |u|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
@@ -106,20 +109,21 @@
                                                     name="Eyelid surgery"
                                                     vid="screening_by_ling_sound_u"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.screening_by_ling_sound_u"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
                                                         class="my-0"
                                                     >
-                                                        <v-radio :value="true" label="Yes"></v-radio>
-                                                        <v-radio :value="false" label="No"></v-radio>
+                                                        <v-radio value="Yes" label="Yes"></v-radio>
+                                                        <v-radio value="No" label="No"></v-radio>
+                                                        <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                     </v-radio-group>
                                                 </validation-provider>
                                             </v-col>
                                             <v-col cols="3" class="py-0">
-                                                (ম) |m|: 
+                                                (ম) |m|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
@@ -128,20 +132,21 @@
                                                     name="Eyelid surgery"
                                                     vid="screening_by_ling_sound_m"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.screening_by_ling_sound_m"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
                                                         class="my-0"
                                                     >
-                                                        <v-radio :value="true" label="Yes"></v-radio>
-                                                        <v-radio :value="false" label="No"></v-radio>
+                                                        <v-radio value="Yes" label="Yes"></v-radio>
+                                                        <v-radio value="No" label="No"></v-radio>
+                                                        <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                     </v-radio-group>
                                                 </validation-provider>
                                             </v-col>
                                             <v-col cols="3" class="py-0">
-                                                (স) |v|: 
+                                                (স) |s|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
@@ -150,20 +155,21 @@
                                                     name="Eyelid surgery"
                                                     vid="screening_by_ling_sound_s"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.screening_by_ling_sound_s"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
                                                         class="my-0"
                                                     >
-                                                        <v-radio :value="true" label="Yes"></v-radio>
-                                                        <v-radio :value="false" label="No"></v-radio>
+                                                        <v-radio value="Yes" label="Yes"></v-radio>
+                                                        <v-radio value="No" label="No"></v-radio>
+                                                        <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                     </v-radio-group>
                                                 </validation-provider>
                                             </v-col>
                                             <v-col cols="3" class="py-0">
-                                                (শ) |S|: 
+                                                (শ) |S|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
@@ -172,15 +178,16 @@
                                                     name="Eyelid surgery"
                                                     vid="screening_by_ling_sound_Sh"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.screening_by_ling_sound_Sh"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
                                                         class="my-0"
                                                     >
-                                                        <v-radio :value="true" label="Yes"></v-radio>
-                                                        <v-radio :value="false" label="No"></v-radio>
+                                                        <v-radio value="Yes" label="Yes"></v-radio>
+                                                        <v-radio value="No" label="No"></v-radio>
+                                                        <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                     </v-radio-group>
                                                 </validation-provider>
                                             </v-col>
@@ -201,7 +208,7 @@
                                                     name="Response By Calling Name"
                                                     vid="test_pta"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.test_pta"
                                                         row
                                                         :error-messages="errors"
@@ -220,7 +227,7 @@
                                                             name="Response By Calling Name"
                                                             vid="test_pta_report"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.test_pta_report"
                                                                 row
                                                                 :error-messages="errors"
@@ -233,7 +240,7 @@
                                                         </validation-provider>
                                                     </v-col>
                                                     <v-col class="py-0" v-if="form.test_pta_report === 'Abnormal'">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.test_pta_abnormality_type"
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
@@ -256,7 +263,7 @@
                                                     name="Response By Calling Name"
                                                     vid="test_pta"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.test_abr"
                                                         row
                                                         :error-messages="errors"
@@ -275,7 +282,7 @@
                                                             name="Response By Calling Name"
                                                             vid="test_abr_report"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.test_abr_report"
                                                                 row
                                                                 :error-messages="errors"
@@ -288,7 +295,7 @@
                                                         </validation-provider>
                                                     </v-col>
                                                     <v-col class="py-0" v-if="form.test_abr_report === 'Abnormal'">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.test_abr_abnormality_type"
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
@@ -311,7 +318,7 @@
                                                     name="Response By Calling Name"
                                                     vid="test_srt"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.test_srt"
                                                         row
                                                         :error-messages="errors"
@@ -330,7 +337,7 @@
                                                             name="Response By Calling Name"
                                                             vid="test_srt_report"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.test_srt_report"
                                                                 row
                                                                 :error-messages="errors"
@@ -343,7 +350,7 @@
                                                         </validation-provider>
                                                     </v-col>
                                                     <v-col class="py-0" v-if="form.test_srt_report === 'Abnormal'">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.test_srt_abnormality_type"
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
@@ -366,7 +373,7 @@
                                                     name="Response By Calling Name"
                                                     vid="test_tympanometry"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.test_tympanometry"
                                                         row
                                                         :error-messages="errors"
@@ -385,7 +392,7 @@
                                                             name="Response By Calling Name"
                                                             vid="test_tympanometry_report"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.test_tympanometry_report"
                                                                 row
                                                                 :error-messages="errors"
@@ -398,7 +405,7 @@
                                                         </validation-provider>
                                                     </v-col>
                                                     <v-col class="py-0" v-if="form.test_tympanometry_report === 'Abnormal'">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.test_tympanometry_abnormality_type"
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
@@ -421,7 +428,7 @@
                                                     name="Response By Calling Name"
                                                     vid="test_play_audiometry"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.test_play_audiometry"
                                                         row
                                                         :error-messages="errors"
@@ -440,7 +447,7 @@
                                                             name="Response By Calling Name"
                                                             vid="test_play_audiometry_report"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.test_play_audiometry_report"
                                                                 row
                                                                 :error-messages="errors"
@@ -453,7 +460,7 @@
                                                         </validation-provider>
                                                     </v-col>
                                                     <v-col class="py-0" v-if="form.test_play_audiometry_report === 'Abnormal'">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.test_play_audiometry_abnormality_type"
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
@@ -476,7 +483,7 @@
                                                     name="Response By Calling Name"
                                                     vid="test_boa"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.test_boa"
                                                         row
                                                         :error-messages="errors"
@@ -495,7 +502,7 @@
                                                             name="Response By Calling Name"
                                                             vid="test_boa_report"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.test_boa_report"
                                                                 row
                                                                 :error-messages="errors"
@@ -508,7 +515,7 @@
                                                         </validation-provider>
                                                     </v-col>
                                                     <v-col class="py-0" v-if="form.test_boa_report === 'Abnormal'">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.test_boa_abnormality_type"
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
@@ -535,9 +542,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -662,10 +669,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -677,14 +684,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true

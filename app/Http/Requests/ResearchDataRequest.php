@@ -38,14 +38,14 @@ class ResearchDataRequest extends FormRequest
             'cleftBaby.address.division' => ['required', 'string', 'min:2'],
             'cleftBaby.first_contact' => ['required', 'string', 'min:2'],
             'cleftBaby.alternate_contact' => ['nullable', 'string', 'min:11'],
-            'cleftBaby.email' => ['required', 'email', 'unique:craniofacial_cleft_babies,email'],
+            // 'cleftBaby.email' => ['required', 'email', 'unique:craniofacial_cleft_babies,email'],
             'cleftBaby.consanguineous_marriage' => ['required', 'boolean'],
             'cleftBaby.consanguinity' => ['nullable', 'required_if:consanguineous_marriage,true', 'string', 'min:2'],
             'cleftBaby.family_cleft' => ['required', 'boolean'],
             'cleftBaby.family_cleft_relatives' => ['nullable', 'required_if:family_cleft,true', 'string', 'min:2'],
             'cleftBaby.folic_acid_supplementation' => ['required', 'boolean'],
             'cleftBaby.maternity_diet' => ['required', 'boolean'],
-            
+
             // Particulars of Mother
             'mother.occupation' => ['required', 'string', 'min:2'],
             'mother.habbit' => ['required', 'string'],
@@ -59,7 +59,7 @@ class ResearchDataRequest extends FormRequest
             'mother.ho_pregnancy_loss' => ['required', 'string'],
             'mother.ho_pregnancy_termination' => ['required', 'string'],
             'mother.condition_of_alive_babies' => ['required', 'string', 'min:2'],
-            
+
             // Details of pregnancy including
             'pregnancy.contamination_drinking_water' => ['required', 'boolean'],
             'pregnancy.contamination_drinking_water_type' => ['nullable', 'required_if:contamination_drinking_water,true', 'array'],
@@ -82,14 +82,14 @@ class ResearchDataRequest extends FormRequest
             'pregnancy.amniotic_membranes_rupture' => ['required', 'string', 'min:2'],
             'pregnancy.amniotic_fluid_amount' => ['required', 'string', 'min:2'],
             'pregnancy.early_amniotic_fluid_leak' => ['required', 'boolean'],
-            
+
             // Particulars of Father
             'father.occupation' => ['required', 'string', 'min:2'],
             'father.habbit' => ['required', 'string'],
             'father.congenital_anomaly' => ['required', 'boolean'],
             'father.co_morbidities' => ['required', 'array'],
             'father.medications' => ['required', 'array'],
-            
+
             // Particulars of Delivery
             'delivery.mode' => ['required', 'string'],
             'delivery.type' => ['required', 'string'],
@@ -127,25 +127,39 @@ class ResearchDataRequest extends FormRequest
             'newborn.palatal_abnormality_type' => ['nullable', 'required_if:palatal_abnormality,true', 'string'],
             'newborn.cleft_lip' => ['required', 'boolean'],
             'newborn.cleft_lip_type' => ['nullable', 'required_if:cleft_lip,true', 'string'],
-            
+
             // Speech Development
             'speech_development.development' => ['required', 'string'],
             'speech_development.development_of_single_word' => ['required', 'string'],
             'speech_development.development_of_receptive_skills' => ['required', 'string'],
-            'speech_development.development_of_p' => ['required', 'boolean'],
-            'speech_development.development_of_b' => ['required', 'boolean'],
-            'speech_development.development_of_m' => ['required', 'boolean'],
-            'speech_development.development_of_c' => ['required', 'boolean'],
-            'speech_development.development_of_j' => ['required', 'boolean'],
-            'speech_development.development_of_k' => ['required', 'boolean'],
-            'speech_development.development_of_g' => ['required', 'boolean'],
-            'speech_development.development_of_f' => ['required', 'boolean'],
-            'speech_development.development_of_v' => ['required', 'boolean'],
-            'speech_development.development_of_Sh' => ['required', 'boolean'],
-            'speech_development.development_of_s' => ['required', 'boolean'],
-            'speech_development.development_of_a' => ['required', 'boolean'],
-            'speech_development.development_of_i' => ['required', 'boolean'],
-            'speech_development.development_of_u' => ['required', 'boolean'],
+            'speech_development.development_of_p' => ['required', 'string'],
+            'speech_development.development_of_b' => ['required', 'string'],
+            'speech_development.development_of_m' => ['required', 'string'],
+            'speech_development.development_of_c' => ['required', 'string'],
+            'speech_development.development_of_j' => ['required', 'string'],
+            'speech_development.development_of_k' => ['required', 'string'],
+            'speech_development.development_of_g' => ['required', 'string'],
+            'speech_development.development_of_f' => ['required', 'string'],
+            'speech_development.development_of_v' => ['required', 'string'],
+            'speech_development.development_of_Sh' => ['required', 'string'],
+            'speech_development.development_of_s' => ['required', 'string'],
+            'speech_development.development_of_a' => ['required', 'string'],
+            'speech_development.development_of_i' => ['required', 'string'],
+            'speech_development.development_of_u' => ['required', 'string'],
+            'speech_development.development_of_p_description' => ['nullable', 'string'],
+            'speech_development.development_of_b_description' => ['nullable', 'string'],
+            'speech_development.development_of_m_description' => ['nullable', 'string'],
+            'speech_development.development_of_c_description' => ['nullable', 'string'],
+            'speech_development.development_of_j_description' => ['nullable', 'string'],
+            'speech_development.development_of_k_description' => ['nullable', 'string'],
+            'speech_development.development_of_g_description' => ['nullable', 'string'],
+            'speech_development.development_of_f_description' => ['nullable', 'string'],
+            'speech_development.development_of_v_description' => ['nullable', 'string'],
+            'speech_development.development_of_S_descriptionh' => ['nullable', 'string'],
+            'speech_development.development_of_s_description' => ['nullable', 'string'],
+            'speech_development.development_of_a_description' => ['nullable', 'string'],
+            'speech_development.development_of_i_description' => ['nullable', 'string'],
+            'speech_development.development_of_u_description' => ['nullable', 'string'],
             'speech_development.nasality' => ['required', 'boolean'],
             'speech_development.nasality_type' => ['nullable', 'required_if:nasality,true', 'string'],
             'speech_development.facial_grimace' => ['required', 'boolean'],
@@ -155,15 +169,15 @@ class ResearchDataRequest extends FormRequest
             'speech_development.vpi_videofluroscopy' => ['nullable', 'required_if:vpi,yes', 'boolean'],
             'speech_development.vpi_surgery' => ['required', 'boolean'],
             'speech_development.vpi_surgery_type' => ['nullable', 'required_if:vpi_surgery,true', 'string'],
-            
+
             // Hearing Development screening_by_ling_sound_s
-            'hearing_development.response_calling_by_name' => ['required', 'boolean'],
-            'hearing_development.screening_by_ling_sound_s' => ['required', 'boolean'],
-            'hearing_development.screening_by_ling_sound_Sh' => ['required', 'boolean'],
-            'hearing_development.screening_by_ling_sound_a' => ['required', 'boolean'],
-            'hearing_development.screening_by_ling_sound_i' => ['required', 'boolean'],
-            'hearing_development.screening_by_ling_sound_u' => ['required', 'boolean'],
-            'hearing_development.screening_by_ling_sound_m' => ['required', 'boolean'],
+            'hearing_development.response_calling_by_name' => ['required', 'string'],
+            'hearing_development.screening_by_ling_sound_s' => ['required', 'string'],
+            'hearing_development.screening_by_ling_sound_Sh' => ['required', 'string'],
+            'hearing_development.screening_by_ling_sound_a' => ['required', 'string'],
+            'hearing_development.screening_by_ling_sound_i' => ['required', 'string'],
+            'hearing_development.screening_by_ling_sound_u' => ['required', 'string'],
+            'hearing_development.screening_by_ling_sound_m' => ['required', 'string'],
             'hearing_development.test_pta' => ['required', 'boolean'],
             'hearing_development.test_pta_report' => ['nullable', 'required_if:test_pta,true', 'string'],
             'hearing_development.test_pta_abnormality_type' => ['nullable', 'required_if:test_pta_report,Abnormal', 'string'],
@@ -182,7 +196,7 @@ class ResearchDataRequest extends FormRequest
             'hearing_development.test_boa' => ['required', 'boolean'],
             'hearing_development.test_boa_report' => ['nullable', 'required_if:test_boa,true', 'string'],
             'hearing_development.test_boa_abnormality_type' => ['nullable', 'required_if:test_boa_report,Abnormal', 'string'],
-            
+
             // Treatment Details
             'treatment.evaluation_of_imaging' => ['required', 'array'],
             'treatment.dissection_type' => ['required', 'string'],
@@ -194,7 +208,7 @@ class ResearchDataRequest extends FormRequest
             'treatment.cancer_malignancy_developed_cleft_child' => ['required', 'boolean'],
             'treatment.genetic_analysis_blood_sample_taken' => ['required', 'boolean'],
             'treatment.genetic_analysis_buccal_mucosal_sample_taken' => ['required', 'boolean'],
-            
+
             // Outcome Details
             'outcome.standard_photographic_views' => ['required', 'string'],
             'outcome.video_speech_recordings' => ['required', 'string'],
@@ -209,6 +223,8 @@ class ResearchDataRequest extends FormRequest
             'outcome.parents_review_of_dental' => ['required', 'string'],
             'outcome.parents_review_of_eating' => ['required', 'string'],
             'outcome.parents_review_of_speech' => ['required', 'string'],
+            'outcome.report' => ['required', 'string'],
+            'outcome.interviewer' => ['required', 'string'],
         ];
     }
 }

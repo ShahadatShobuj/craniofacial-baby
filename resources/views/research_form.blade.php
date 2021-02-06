@@ -116,13 +116,13 @@
                                     :complete="step > 10"
                                     step="10"
                                     class="py-1"
-                                    :editable="step > 10"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Outcome
                                 </v-stepper-step>
                             </v-stepper-header>
-                        
+
                             <v-stepper-items>
                                 <v-stepper-content step="1" class="pa-1">
                                     <contact-details
@@ -224,7 +224,7 @@
                                         <v-card class="py-0">
                                             <v-card-text>
                                                 <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                                                    <v-stepper-step editable 
+                                                    <v-stepper-step editable
                                                         :complete="hasState('1') ? checkValidation('1') : false"
                                                         :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                                                         edit-icon="$complete"
@@ -234,7 +234,7 @@
                                                     >
                                                         Outcome:
                                                     </v-stepper-step>
-                                                    
+
                                                     <v-stepper-content step="1" data-question="1" class="my-0 py-0">
                                                         <v-stepper-items>
                                                             <v-row>
@@ -248,7 +248,7 @@
                                                                         name="Eyelid surgery"
                                                                         vid="standard_photographic_views"
                                                                     >
-                                                                        <v-radio-group 
+                                                                        <v-radio-group
                                                                             v-model="form.outcome.standard_photographic_views"
                                                                             row
                                                                             :error-messages="errors"
@@ -272,7 +272,7 @@
                                                                         name="Eyelid surgery"
                                                                         vid="video_speech_recordings"
                                                                     >
-                                                                        <v-radio-group 
+                                                                        <v-radio-group
                                                                             v-model="form.outcome.video_speech_recordings"
                                                                             row
                                                                             :error-messages="errors"
@@ -296,7 +296,7 @@
                                                                         name="Eyelid surgery"
                                                                         vid="vision_test"
                                                                     >
-                                                                        <v-radio-group 
+                                                                        <v-radio-group
                                                                             v-model="form.outcome.vision_test"
                                                                             row
                                                                             :error-messages="errors"
@@ -320,7 +320,7 @@
                                                                         name="Eyelid surgery"
                                                                         vid="nasal_airway_evaluation"
                                                                     >
-                                                                        <v-radio-group 
+                                                                        <v-radio-group
                                                                             v-model="form.outcome.nasal_airway_evaluation"
                                                                             row
                                                                             :error-messages="errors"
@@ -338,7 +338,7 @@
                                                                     e) Educational and occupational attainments:
                                                                 </v-col>
                                                                 <v-col md="6" class="py-0">
-                                                                    <input-text 
+                                                                    <input-text
                                                                         v-model="form.outcome.educational_occupational_attainments"
                                                                         rules="required|min:2|max:50"
                                                                         label="Educational Occupational attainments"
@@ -360,7 +360,7 @@
                                                                         name="Eyelid surgery"
                                                                         vid="marital_status"
                                                                     >
-                                                                        <v-radio-group 
+                                                                        <v-radio-group
                                                                             v-model="form.outcome.marital_status"
                                                                             row
                                                                             :error-messages="errors"
@@ -378,7 +378,7 @@
                                                                         <v-col md="8" class="py-0">
                                                                             <v-row>
                                                                                 <v-col cols="12" class="py-0">
-                                                                                    <input-text 
+                                                                                    <input-text
                                                                                         v-model="form.outcome.marital_status_child"
                                                                                         rules="min:1|numeric"
                                                                                         label="Number of child"
@@ -418,7 +418,7 @@
                                                                                 name="Eyelid surgery"
                                                                                 vid="parents_review_of_appearance"
                                                                             >
-                                                                                <v-radio-group 
+                                                                                <v-radio-group
                                                                                     v-model="form.outcome.parents_review_of_appearance"
                                                                                     row
                                                                                     :error-messages="errors"
@@ -443,7 +443,7 @@
                                                                                 name="Eyelid surgery"
                                                                                 vid="parents_review_of_speech"
                                                                             >
-                                                                                <v-radio-group 
+                                                                                <v-radio-group
                                                                                     v-model="form.outcome.parents_review_of_speech"
                                                                                     row
                                                                                     :error-messages="errors"
@@ -468,7 +468,7 @@
                                                                                 name="Eyelid surgery"
                                                                                 vid="parents_review_of_eating"
                                                                             >
-                                                                                <v-radio-group 
+                                                                                <v-radio-group
                                                                                     v-model="form.outcome.parents_review_of_eating"
                                                                                     row
                                                                                     :error-messages="errors"
@@ -493,7 +493,7 @@
                                                                                 name="Eyelid surgery"
                                                                                 vid="parents_review_of_breathing"
                                                                             >
-                                                                                <v-radio-group 
+                                                                                <v-radio-group
                                                                                     v-model="form.outcome.parents_review_of_breathing"
                                                                                     row
                                                                                     :error-messages="errors"
@@ -518,7 +518,7 @@
                                                                                 name="Eyelid surgery"
                                                                                 vid="parents_review_of_dental"
                                                                             >
-                                                                                <v-radio-group 
+                                                                                <v-radio-group
                                                                                     v-model="form.outcome.parents_review_of_dental"
                                                                                     row
                                                                                     :error-messages="errors"
@@ -534,6 +534,38 @@
                                                                     </v-row>
                                                                 </v-col>
                                                             </v-row>
+                                                            <v-row>
+                                                                <v-col md="3" class="py-0">
+                                                                    h) Report:
+                                                                </v-col>
+                                                                <v-col md="9" class="py-0">
+                                                                    <input-text-area
+                                                                        v-model="form.outcome.report"
+                                                                        rules="required|min:2"
+                                                                        label="Report"
+                                                                        vid="outcome.report"
+                                                                        :counter="50"
+                                                                        :data-optional="true"
+                                                                    >
+                                                                    </input-text-area>
+                                                                </v-col>
+                                                            </v-row>
+                                                            <v-row>
+                                                                <v-col md="3" class="py-0">
+                                                                    i) Interviewer:
+                                                                </v-col>
+                                                                <v-col md="9" class="py-0">
+                                                                    <input-text
+                                                                        v-model="form.outcome.interviewer"
+                                                                        rules="required|min:2"
+                                                                        label="Interviewer"
+                                                                        vid="outcome.interviewer"
+                                                                        :counter="50"
+                                                                        :data-optional="true"
+                                                                    >
+                                                                    </input-text>
+                                                                </v-col>
+                                                            </v-row>
                                                         </v-stepper-items>
                                                     </v-stepper-content>
                                                 </v-stepper>
@@ -547,9 +579,9 @@
                                                 >
                                                     Back
                                                 </v-btn>
-                                                <v-btn 
+                                                <v-btn
                                                     small
-                                                    type="reset" 
+                                                    type="reset"
                                                     color="secondary"
                                                     :loading="processing"
                                                 >
@@ -565,7 +597,7 @@
                     <v-card-actions class="text-right px-10">
                         <v-spacer />
                         <v-btn
-                            type="reset" 
+                            type="reset"
                             :disabled="invalid"
                             outlined
                         >
@@ -636,14 +668,16 @@ const app = new Vue({
                     nasal_airway_evaluation: null,
                     educational_occupational_attainments: null,
                     marital_status: null,
-                    marital_status_child: null,
-                    marital_status_abnormal_child: null,
+                    number_of_child: null,
+                    number_of_abnormal_child: null,
 
                     parents_review_of_appearance: null,
                     parents_review_of_breathing: null,
                     parents_review_of_dental: null,
                     parents_review_of_eating: null,
                     parents_review_of_speech: null,
+                    report: null,
+                    interviewer: null,
                 }
             },
             stepperState: [],
@@ -723,8 +757,8 @@ const app = new Vue({
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         saveAndProceed(formData) {
             const clause = event.target.name;

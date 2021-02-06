@@ -19,7 +19,7 @@ class CreateCraniofacialCleftBabiesTable extends Migration
             $table->string('father_name');
             $table->string('mother_name');
             $table->string('guardian_name');
-            $table->string('email')->unique();
+            // $table->string('email')->unique();
             $table->string('operation_age');
             $table->string('current_age');
             $table->string('first_contact');

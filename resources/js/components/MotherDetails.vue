@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="checkValidation('1')"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -31,7 +31,7 @@
                                     name="Mother Occupation"
                                     vid="occupation"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="mother.occupation"
                                         row
                                         :error-messages="errors"
@@ -60,10 +60,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('2') ? checkValidation('2') : false"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -73,7 +73,7 @@
                         >
                             Personal:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="2" data-question="2" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -82,7 +82,7 @@
                                     name="Mother Habbit"
                                     vid="habbit"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="mother.habbit"
                                         row
                                         :error-messages="errors"
@@ -94,13 +94,13 @@
                                         <v-radio value="Exposed-tobacco" label="Exposed to tobacco"></v-radio>
                                     </v-radio-group>
                                 </validation-provider>
-                                
+
                                 <v-row v-if="mother.habbit == 'Smoking'">
                                     <v-col md="6">
                                         If smoking, number of cigarettes smoked per day:
                                     </v-col>
                                     <v-col md="6" class="pt-0">
-                                        <input-text 
+                                        <input-text
                                             v-model="mother.number_of_cigerettes"
                                             rules="required|numeric"
                                             label="Number of cigerettes"
@@ -127,10 +127,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('3') ? checkValidation('3') : false"
                             :rules="hasState('3') ? [() => checkValidation('3')] : [() => true]"
                             edit-icon="$complete"
@@ -140,7 +140,7 @@
                         >
                             Congenital Anomaly:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="3" data-question="3" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -149,7 +149,7 @@
                                     name="Congenital Anomaly"
                                     vid="congenital_anomaly"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="mother.congenital_anomaly"
                                         row
                                         :error-messages="errors"
@@ -175,10 +175,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('4') && coMorbiditiesValidation"
                             :rules="hasState('4') ? [() => coMorbiditiesValidation] : [() => true]"
                             edit-icon="$complete"
@@ -189,7 +189,7 @@
                             Co-morbidities:
                             <span v-if="hasState('4') && !coMorbiditiesValidation" >Field is required!</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="4" data-question="4" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -276,10 +276,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('5') && medicationsValidation"
                             :rules="hasState('5') ? [() => medicationsValidation] : [() => true]"
                             edit-icon="$complete"
@@ -290,7 +290,7 @@
                             Medications:
                             <span v-if="hasState('5') && !medicationsValidation" >Field is required!</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="5" data-question="5" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="flex-wrap">
@@ -553,10 +553,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('6') && checkValidation('6')"
                             :rules="hasState('6') ? [() => checkValidation('6')] : [() => true]"
                             edit-icon="$complete"
@@ -574,7 +574,7 @@
                                     name="Exposure to insecticides"
                                     vid="exposure_to_insecticides"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="mother.exposure_to_insecticides"
                                         row
                                         :error-messages="errors"
@@ -589,7 +589,7 @@
                                         If Yes, Mention the name:
                                     </v-col>
                                     <v-col cols="6">
-                                        <input-text 
+                                        <input-text
                                             v-model="mother.exposure_to_insecticides_name"
                                             rules="required|min:2|max:50"
                                             label="Insecticide's Name"
@@ -615,10 +615,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('7') && checkValidation('7')"
                             :rules="[() => !hasState('7') || (hasState('7') && checkValidation('7'))]"
                             edit-icon="$complete"
@@ -629,19 +629,19 @@
                             Obstetric variables:
                             <span v-if="hasState('7') && !checkValidation('7')" >Field is required!</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="7" data-question="7" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
                                     <v-col cols="4" class="py-0">
-                                        Number of pregnancies: 
+                                        Number of pregnancies:
                                         <validation-provider
                                             rules="required"
                                             v-slot="{ errors, valid, dirty }"
                                             name="Number of pregnancies"
                                             vid="number_of_pregnancies"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="mother.number_of_pregnancies"
                                                 row
                                                 :error-messages="errors"
@@ -665,7 +665,7 @@
                                             name="H/O pregnancy loss"
                                             vid="ho_pregnancy_loss"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="mother.ho_pregnancy_loss"
                                                 row
                                                 :error-messages="errors"
@@ -689,7 +689,7 @@
                                             name="H/O pregnancy termination"
                                             vid="ho_pregnancy_terimination"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="mother.ho_pregnancy_termination"
                                                 row
                                                 :error-messages="errors"
@@ -722,10 +722,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('8') ? checkValidation('8') : false"
                             :rules="hasState('8') ? [() => checkValidation('8')] : [() => true]"
                             edit-icon="$complete"
@@ -735,7 +735,7 @@
                         >
                             Condition of Alive babies:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="8" data-question="8" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -744,7 +744,7 @@
                                     name="Condition of Alive Babies"
                                     vid="condition_of_alive_babies"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="mother.condition_of_alive_babies"
                                         row
                                         :error-messages="errors"
@@ -775,9 +775,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -823,10 +823,10 @@ export default {
                 occupation: null,
                 habbit: null,
                 number_of_cigerettes: null,
-                congenital_anomaly: true,
+                congenital_anomaly: null,
                 co_morbidities: [],
                 medications: [],
-                exposure_to_insecticides: false,
+                exposure_to_insecticides: null,
                 exposure_to_insecticides_name: null,
                 number_of_pregnancies: null,
                 ho_pregnancy_loss: null,
@@ -879,10 +879,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -894,14 +894,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true

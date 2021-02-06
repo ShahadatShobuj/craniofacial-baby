@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -11,9 +11,9 @@
             @submit.prevent="validateAndProceed"
         >
             <v-card class="py-0">
-                <v-card-text>
+                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? checkValidation('1') : false"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -23,7 +23,7 @@
                         >
                             Speech-language Development:
                         </v-stepper-step>
-                    
+
                         <v-stepper-items>
                             <v-stepper-content step="1" data-question="1" class="my-0 py-0">
                                 <v-row>
@@ -36,7 +36,7 @@
                                             name="Eyelid surgery"
                                             vid="development"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.development"
                                                 row
                                                 :error-messages="errors"
@@ -49,7 +49,7 @@
                                         </validation-provider>
                                     </v-col>
                                     <v-col md="3" class="py-0">
-                                        Single Word: 
+                                        Single Word:
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -58,7 +58,7 @@
                                             name="Single Word"
                                             vid="development_of_single_word"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.development_of_single_word"
                                                 row
                                                 :error-messages="errors"
@@ -74,7 +74,7 @@
                                         </validation-provider>
                                     </v-col>
                                     <v-col md="3" class="py-0">
-                                        Receptive Skills: 
+                                        Receptive Skills:
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -83,7 +83,7 @@
                                             name="Single Word"
                                             vid="development_of_receptive_skills"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.development_of_receptive_skills"
                                                 row
                                                 :error-messages="errors"
@@ -94,7 +94,7 @@
                                                 <v-radio value="two_keywords" label="2 keywords"></v-radio>
                                                 <v-radio value="three_keywords" label="3 keywords"></v-radio>
                                                 <v-radio value="more_than_three_keywords" label=">3 keywords"></v-radio>
-                                                <v-radio value="Not yet" label="Not yet"></v-radio>
+                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -105,7 +105,7 @@
                                             <v-col md="8" class="py-0">
                                                 <v-row>
                                                     <v-col cols="3" class="py-0">
-                                                        (প) |p|: 
+                                                        (প) |p|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -114,20 +114,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_p"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_p"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_p === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_p_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_p_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (ব) |b|: 
+                                                        (ব) |b|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -136,20 +152,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_b"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_b"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_b === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_b_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_b_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (ম) |m|: 
+                                                        (ম) |m|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -158,17 +190,33 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_m"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_m"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_m === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_m_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_m_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -178,7 +226,7 @@
                                             <v-col md="8" class="py-0">
                                                 <v-row>
                                                     <v-col cols="3" class="py-0">
-                                                        (চ) |c|: 
+                                                        (চ) |c|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -187,20 +235,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_c"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_c"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_c === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_c_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_c_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (জ) |j|: 
+                                                        (জ) |j|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -209,17 +273,33 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_j"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_j"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_j === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_j_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_j_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -229,7 +309,7 @@
                                             <v-col md="8" class="py-0">
                                                 <v-row>
                                                     <v-col cols="3" class="py-0">
-                                                        (ক) |k|: 
+                                                        (ক) |k|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -238,20 +318,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_k"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_k"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_k === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_k_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_k_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (গ) |g|: 
+                                                        (গ) |g|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -260,17 +356,33 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_g"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_g"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_g === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_g_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_g_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -280,7 +392,7 @@
                                             <v-col md="8" class="py-0">
                                                 <v-row>
                                                     <v-col cols="3" class="py-0">
-                                                        (ফ) |f|: 
+                                                        (ফ) |f|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -289,20 +401,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_f"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_f"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_f === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_f_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_f_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (ভ) |V|: 
+                                                        (ভ) |V|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -311,20 +439,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_v"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_v"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_v === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_v_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_v_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (শ) |S|: 
+                                                        (শ) |S|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -333,20 +477,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_Sh"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_Sh"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_Sh === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_Sh_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_Sh_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (স) |v|: 
+                                                        (স) |s|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -355,17 +515,33 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_s"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_s"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_s === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_s_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_s_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -375,7 +551,7 @@
                                             <v-col md="8" class="py-0">
                                                 <v-row>
                                                     <v-col cols="3" class="py-0">
-                                                        (আ) |a|: 
+                                                        (আ) |a|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -384,20 +560,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_a"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_a"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_a === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_a_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_a_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (ই) |i|: 
+                                                        (ই) |i|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -406,20 +598,36 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_i"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_i"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_i === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_i_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_i_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
-                                                        (উ) |u|: 
+                                                        (উ) |u|:
                                                     </v-col>
                                                     <v-col cols="9" class="py-0">
                                                         <validation-provider
@@ -428,17 +636,33 @@
                                                             name="Eyelid surgery"
                                                             vid="development_of_u"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.development_of_u"
                                                                 row
                                                                 :error-messages="errors"
                                                                 :success="valid && dirty"
                                                                 class="my-0"
                                                             >
-                                                                <v-radio :value="true" label="Yes"></v-radio>
-                                                                <v-radio :value="false" label="No"></v-radio>
+                                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                                <v-radio value="No" label="No"></v-radio>
+                                                                <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
+                                                        <v-row v-if="form.development_of_u === 'Yes'">
+                                                            <v-col cols="3">
+                                                                If Yes,
+                                                            </v-col>
+                                                            <v-col cols="9" class="pt-0">
+                                                                <input-text
+                                                                    v-model="form.development_of_u_description"
+                                                                    rules="required|min:2|max:50"
+                                                                    label="Description"
+                                                                    vid="development_of_u_description"
+                                                                    :counter="50"
+                                                                >
+                                                                </input-text>
+                                                            </v-col>
+                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -452,7 +676,7 @@
                                             name="Nasality"
                                             vid="nasality"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.nasality"
                                                 row
                                                 :error-messages="errors"
@@ -474,7 +698,7 @@
                                                     name="Nasality type"
                                                     vid="nasality_type"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.cleft_lip_type"
                                                         row
                                                         :error-messages="errors"
@@ -498,7 +722,7 @@
                                             name="Facial Grimace"
                                             vid="facial_grimace"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.facial_grimace"
                                                 row
                                                 :error-messages="errors"
@@ -518,7 +742,7 @@
                                             name="Facial Grimace"
                                             vid="articulation"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.articulation"
                                                 row
                                                 :error-messages="errors"
@@ -538,7 +762,7 @@
                                             name="VPI"
                                             vid="vpi"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.vpi"
                                                 row
                                                 :error-messages="errors"
@@ -547,7 +771,6 @@
                                             >
                                                 <v-radio value="yes" label="Yes"></v-radio>
                                                 <v-radio value="no" label="No"></v-radio>
-                                                <v-radio value="Not Applicable" label="No"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                         <v-row v-if="form.vpi === 'yes'">
@@ -566,7 +789,7 @@
                                                             name="Nasality type"
                                                             vid="vpi_videofluroscopy"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.vpi_videofluroscopy"
                                                                 row
                                                                 :error-messages="errors"
@@ -588,7 +811,7 @@
                                                             name="Nasality type"
                                                             vid="vpi_nasoendoscopy"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.vpi_nasoendoscopy"
                                                                 row
                                                                 :error-messages="errors"
@@ -612,7 +835,7 @@
                                             name="Surgery for VPI"
                                             vid="vpi_surgery"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.vpi_surgery"
                                                 row
                                                 :error-messages="errors"
@@ -634,7 +857,7 @@
                                                     name="Nasality type"
                                                     vid="vpi_surgery_type"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.vpi_surgery_type"
                                                         row
                                                         :error-messages="errors"
@@ -665,9 +888,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -745,6 +968,20 @@ export default {
                 development_of_a: null,
                 development_of_i: null,
                 development_of_u: null,
+                development_of_p_description: null,
+                development_of_b_description: null,
+                development_of_m_description: null,
+                development_of_c_description: null,
+                development_of_j_description: null,
+                development_of_k_description: null,
+                development_of_g_description: null,
+                development_of_f_description: null,
+                development_of_v_description: null,
+                development_of_S_descriptionh: null,
+                development_of_s_description: null,
+                development_of_a_description: null,
+                development_of_i_description: null,
+                development_of_u_description: null,
 
                 nasality: null,
                 nasality_type: null,
@@ -799,10 +1036,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -814,14 +1051,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true

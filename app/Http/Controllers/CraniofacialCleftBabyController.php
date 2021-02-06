@@ -20,7 +20,7 @@ class CraniofacialCleftBabyController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function research_form (Request $request) {
         return view('research_form');
     }
@@ -68,7 +68,7 @@ class CraniofacialCleftBabyController extends Controller
         // $clefBabyInput = $request->except(['outcome', 'cleftBaby.address']);
         // $addressInput = $request->only('cleftBaby.address');
         // return $user->name;
-        
+
         DB::beginTransaction();
         try {
             $CleftBaby = CraniofacialCleftBaby::create($clefBabyInput);
@@ -87,7 +87,7 @@ class CraniofacialCleftBabyController extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
-            return response()->json(['status' => 'Error', 'message' => 'Sorry! Something went wrong, please try again.'], 401);
+            return response()->json(['status' => 'Error', 'message' => $e], 401);
         }
 
         return response()->json(['status' => 'Success', 'message' => 'Data saved successfully.']);

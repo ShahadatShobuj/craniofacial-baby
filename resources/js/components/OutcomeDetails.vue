@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? checkValidation('1') : false"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -23,7 +23,7 @@
                         >
                             Outcome:
                         </v-stepper-step>
-                        
+
                         <v-stepper-content step="1" data-question="1" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
@@ -37,7 +37,7 @@
                                             name="Eyelid surgery"
                                             vid="standard_photographic_views"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.standard_photographic_views"
                                                 row
                                                 :error-messages="errors"
@@ -61,7 +61,7 @@
                                             name="Eyelid surgery"
                                             vid="video_speech_recordings"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.video_speech_recordings"
                                                 row
                                                 :error-messages="errors"
@@ -85,7 +85,7 @@
                                             name="Eyelid surgery"
                                             vid="vision_test"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.vision_test"
                                                 row
                                                 :error-messages="errors"
@@ -109,7 +109,7 @@
                                             name="Eyelid surgery"
                                             vid="nasal_airway_evaluation"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.nasal_airway_evaluation"
                                                 row
                                                 :error-messages="errors"
@@ -127,7 +127,7 @@
                                         e) Educational and occupational attainments:
                                     </v-col>
                                     <v-col md="6" class="py-0">
-                                        <input-text 
+                                        <input-text
                                             v-model="form.educational_occupational_attainments"
                                             rules="required|min:2|max:50"
                                             label="Educational Occupational attainments"
@@ -140,7 +140,7 @@
                                 </v-row>
                                 <v-row>
                                     <v-col md="4" class="py-0">
-                                        e) Marital Status:
+                                        f) Marital Status:
                                     </v-col>
                                     <v-col md="8" class="py-0">
                                         <validation-provider
@@ -149,7 +149,7 @@
                                             name="Eyelid surgery"
                                             vid="marital_status"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.marital_status"
                                                 row
                                                 :error-messages="errors"
@@ -167,7 +167,7 @@
                                             <v-col md="8" class="py-0">
                                                 <v-row>
                                                     <v-col cols="12" class="py-0">
-                                                        <input-text 
+                                                        <input-text
                                                             v-model="form.number_of_child"
                                                             rules="min:1|numeric"
                                                             label="Number of child"
@@ -207,7 +207,7 @@
                                                     name="Eyelid surgery"
                                                     vid="parents_review_of_appearance"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.parents_review_of_appearance"
                                                         row
                                                         :error-messages="errors"
@@ -232,7 +232,7 @@
                                                     name="Eyelid surgery"
                                                     vid="parents_review_of_speech"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.parents_review_of_speech"
                                                         row
                                                         :error-messages="errors"
@@ -257,7 +257,7 @@
                                                     name="Eyelid surgery"
                                                     vid="parents_review_of_eating"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.parents_review_of_eating"
                                                         row
                                                         :error-messages="errors"
@@ -282,7 +282,7 @@
                                                     name="Eyelid surgery"
                                                     vid="parents_review_of_breathing"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.parents_review_of_breathing"
                                                         row
                                                         :error-messages="errors"
@@ -307,7 +307,7 @@
                                                     name="Eyelid surgery"
                                                     vid="parents_review_of_dental"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.parents_review_of_dental"
                                                         row
                                                         :error-messages="errors"
@@ -323,6 +323,22 @@
                                         </v-row>
                                     </v-col>
                                 </v-row>
+                                <v-row>
+                                    <v-col md="3" class="py-0">
+                                        h) Report:
+                                    </v-col>
+                                    <v-col md="9" class="py-0">
+                                        <input-text-area
+                                            v-model="form.report"
+                                            rules="required|min:2"
+                                            label="Report"
+                                            vid="report"
+                                            :counter="50"
+                                            :data-optional="true"
+                                        >
+                                        </input-text-area>
+                                    </v-col>
+                                </v-row>
                             </v-stepper-items>
                         </v-stepper-content>
                     </v-stepper>
@@ -336,9 +352,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -439,10 +455,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -454,14 +470,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true

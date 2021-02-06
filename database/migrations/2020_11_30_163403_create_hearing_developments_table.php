@@ -15,13 +15,13 @@ class CreateHearingDevelopmentsTable extends Migration
     {
         Schema::create('hearing_developments', function (Blueprint $table) {
             $table->id();
-            $table->boolean('response_calling_by_name');
-            $table->boolean('screening_by_ling_sound_s');
-            $table->boolean('screening_by_ling_sound_Sh');
-            $table->boolean('screening_by_ling_sound_a');
-            $table->boolean('screening_by_ling_sound_i');
-            $table->boolean('screening_by_ling_sound_u');
-            $table->boolean('screening_by_ling_sound_m');
+            $table->string('response_calling_by_name');
+            $table->string('screening_by_ling_sound_s');
+            $table->string('screening_by_ling_sound_Sh');
+            $table->string('screening_by_ling_sound_a');
+            $table->string('screening_by_ling_sound_i');
+            $table->string('screening_by_ling_sound_u');
+            $table->string('screening_by_ling_sound_m');
             $table->boolean('test_pta');
             $table->string('test_pta_report')->nullable();
             $table->string('test_pta_abnormality_type')->nullable();

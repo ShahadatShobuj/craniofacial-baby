@@ -28,6 +28,8 @@ class CreateOutcomesTable extends Migration
             $table->string('parents_review_of_dental');
             $table->string('parents_review_of_eating');
             $table->string('parents_review_of_speech');
+            $table->string('report');
+            $table->string('interviewer');
             $table->foreignId('craniofacial_cleft_baby_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
