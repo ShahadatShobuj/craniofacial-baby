@@ -81,7 +81,7 @@
         <div class="col-md-12">
             <div class="card mb-0">
                 <div class="card-header card-header-warning">
-                    <h4 class="card-title">Craniofacial Clef Babies</h4>
+                    <h4 class="card-title">Craniofacial Cleft Babies</h4>
                 </div>
 
                 <div class="card-body mt-1">
@@ -270,7 +270,7 @@ const app = new Vue({
                 });
             })
         },
-        
+
     },
     mounted() {},
     created(){
