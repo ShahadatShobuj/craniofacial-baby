@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? evaluationOfImagingValidation : false"
                             :rules="hasState('1') ? [() => evaluationOfImagingValidation] : [() => true]"
                             edit-icon="$complete"
@@ -24,7 +24,7 @@
                             Evaludation of Imaging(Original):
                             <span v-if="hasState('1') && !evaluationOfImagingValidation">Please, select involved system</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="1" data-question="1" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -85,10 +85,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        
-                        <v-stepper-step editable 
+
+                        <v-stepper-step editable
                             :complete="hasState('2') ? checkValidation('2') : false"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -98,7 +98,7 @@
                         >
                             Treatment Pathway:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="2" data-question="2" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
@@ -108,7 +108,7 @@
                                 </v-row>
                                 <v-row class="">
                                     <v-col cols="4" class="py-0">
-                                        Whether dissection was: 
+                                        Whether dissection was:
                                     </v-col>
                                     <v-col cols="8" class="py-0">
                                         <validation-provider
@@ -117,7 +117,7 @@
                                             name="Dissection type"
                                             vid="dissection_type"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.dissection_type"
                                                 row
                                                 :error-messages="errors"
@@ -130,7 +130,7 @@
                                         </validation-provider>
                                     </v-col>
                                     <v-col cols="4" class="py-0">
-                                        Surgery to eyelids: 
+                                        Surgery to eyelids:
                                     </v-col>
                                     <v-col cols="8" class="py-0">
                                         <validation-provider
@@ -139,7 +139,7 @@
                                             name="Eyelid surgery"
                                             vid="dissection_of_eyelid_surgery"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.dissection_of_eyelid_surgery"
                                                 row
                                                 :error-messages="errors"
@@ -152,7 +152,7 @@
                                         </validation-provider>
                                     </v-col>
                                     <v-col cols="4" class="py-0">
-                                        Surgery to choanal atresia: 
+                                        Surgery to choanal atresia:
                                     </v-col>
                                     <v-col cols="8" class="py-0">
                                         <validation-provider
@@ -161,7 +161,7 @@
                                             name="Eyelid surgery"
                                             vid="dissection_of_choanal_atresia_surgery"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.dissection_of_choanal_atresia_surgery"
                                                 row
                                                 :error-messages="errors"
@@ -174,7 +174,7 @@
                                         </validation-provider>
                                     </v-col>
                                     <v-col cols="4" class="py-0">
-                                        Surgery to palate: 
+                                        Surgery to palate:
                                     </v-col>
                                     <v-col cols="8" class="py-0">
                                         <validation-provider
@@ -183,7 +183,7 @@
                                             name="Eyelid surgery"
                                             vid="dissection_of_eyelid_surgery"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.dissection_of_palate_surgery"
                                                 row
                                                 :error-messages="errors"
@@ -196,7 +196,7 @@
                                         </validation-provider>
                                     </v-col>
                                     <v-col cols="4" class="py-0">
-                                        Surgery to alveolar cleft: 
+                                        Surgery to alveolar cleft:
                                     </v-col>
                                     <v-col cols="8" class="py-0">
                                         <validation-provider
@@ -205,7 +205,7 @@
                                             name="Eyelid surgery"
                                             vid="dissection_of_alveolar_cleft_surgery"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.dissection_of_alveolar_cleft_surgery"
                                                 row
                                                 :error-messages="errors"
@@ -234,10 +234,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('3') ? orthodonticCareValidation : false"
                             :rules="hasState('3') ? [() => orthodonticCareValidation] : [() => true]"
                             edit-icon="$complete"
@@ -248,15 +248,15 @@
                             Orthodontic care:
                             <span v-if="hasState('3') && !orthodonticCareValidation">Please, select an option.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="3" data-question="3" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
                                     <v-col cols="3" class="py-0">
                                         <v-checkbox
                                             v-model="form.orthodontic_care"
-                                            label="X-rays"
-                                            value="X-rays"
+                                            label="Applience"
+                                            value="Applience"
                                             :data-optional="true"
                                             class="my-0"
                                         >
@@ -265,8 +265,8 @@
                                     <v-col cols="3" class="py-0">
                                         <v-checkbox
                                             v-model="form.orthodontic_care"
-                                            value="CT"
-                                            label="CT"
+                                            value="Prosthesis"
+                                            label="Prosthesis"
                                             :data-optional="true"
                                             class="my-0"
                                         >
@@ -275,8 +275,8 @@
                                     <v-col cols="3" class="py-0">
                                         <v-checkbox
                                             v-model="form.evaluation_of_imaging"
-                                            value="MRI"
-                                            label="MRI"
+                                            value="Others"
+                                            label="Others"
                                             :data-optional="true"
                                             class="my-0"
                                         >
@@ -309,10 +309,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                    
-                        <v-stepper-step editable 
+
+                        <v-stepper-step editable
                             :complete="hasState('4') ? checkValidation('4') : false"
                             :rules="hasState('4') ? [() => checkValidation('4')] : [() => true]"
                             edit-icon="$complete"
@@ -332,7 +332,7 @@
                                             name="Eyelid surgery"
                                             vid="cancer_malignancy_developed_cleft_child"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.cancer_malignancy_developed_cleft_child"
                                                 row
                                                 :error-messages="errors"
@@ -361,10 +361,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>       
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('5') ? checkValidation('5') : false"
                             :rules="hasState('5') ? [() => checkValidation('5')] : [() => true]"
                             edit-icon="$complete"
@@ -374,7 +374,7 @@
                         >
                             Genetic Analysis:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="5" data-question="5" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
@@ -388,7 +388,7 @@
                                             name="Eyelid surgery"
                                             vid="genetic_analysis_blood_sample_taken"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.genetic_analysis_blood_sample_taken"
                                                 row
                                                 :error-messages="errors"
@@ -412,7 +412,7 @@
                                             name="Eyelid surgery"
                                             vid="genetic_analysis_buccal_mucosal_sample_taken"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.genetic_analysis_buccal_mucosal_sample_taken"
                                                 row
                                                 :error-messages="errors"
@@ -446,9 +446,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -554,10 +554,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -569,14 +569,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true
