@@ -596,8 +596,8 @@
                                         :error-messages="errors"
                                         :success="valid && dirty"
                                     >
-                                        <v-radio :value="true" label="Yes"></v-radio>
-                                        <v-radio :value="false" label="No"></v-radio>
+                                        <v-radio value="Adequate" label="Adequate"></v-radio>
+                                        <v-radio value="Inadequate" label="Inadequate"></v-radio>
                                     </v-radio-group>
                                 </validation-provider>
                             </v-stepper-items>

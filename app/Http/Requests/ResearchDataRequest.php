@@ -44,7 +44,7 @@ class ResearchDataRequest extends FormRequest
             'cleftBaby.family_cleft' => ['required', 'boolean'],
             'cleftBaby.family_cleft_relatives' => ['nullable', 'required_if:family_cleft,true', 'string', 'min:2'],
             'cleftBaby.folic_acid_supplementation' => ['required', 'boolean'],
-            'cleftBaby.maternity_diet' => ['required', 'boolean'],
+            'cleftBaby.maternity_diet' => ['required', 'string'],
 
             // Particulars of Mother
             'mother.occupation' => ['required', 'string', 'min:2'],
