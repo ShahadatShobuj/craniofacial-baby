@@ -333,7 +333,7 @@
                                             rules="required|min:2"
                                             label="Report"
                                             vid="report"
-                                            :counter="50"
+                                            :counter="250"
                                             :data-optional="true"
                                         >
                                         </input-text-area>
