@@ -29,7 +29,7 @@ class CreateCraniofacialCleftBabiesTable extends Migration
             $table->boolean('family_cleft')->default(false);
             $table->string('family_cleft_relatives')->nullable();
             $table->boolean('folic_acid_supplementation')->default(false);
-            $table->boolean('maternity_diet')->default(false);
+            $table->string('maternity_diet')->nullable();
             $table->string('created_by');
             $table->timestamps();
         });

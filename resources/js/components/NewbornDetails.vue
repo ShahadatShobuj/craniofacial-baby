@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? checkValidation('1') : false"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -23,7 +23,7 @@
                         >
                             Age of mother at this/affected pregnancy:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="1" data-question="1" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -32,7 +32,7 @@
                                     name="Age of mother during affected pregnancy"
                                     vid="mother_age_during_affected_pregnancy"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.mother_age_during_affected_pregnancy"
                                         row
                                         :error-messages="errors"
@@ -52,7 +52,7 @@
                                             </template>
                                         </v-radio>
                                     </v-radio-group>
-                                </validation-provider>                                                
+                                </validation-provider>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -69,10 +69,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('2') ? checkValidation('2') : false"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -82,7 +82,7 @@
                         >
                             Age of father at this/affected pregnancy:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="2" data-question="2" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -91,7 +91,7 @@
                                     name="Age of father during affected pregnancy"
                                     vid="father_age_during_affected_pregnancy"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.father_age_during_affected_pregnancy"
                                         row
                                         :error-messages="errors"
@@ -111,7 +111,7 @@
                                             </template>
                                         </v-radio>
                                     </v-radio-group>
-                                </validation-provider>                                                
+                                </validation-provider>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -128,10 +128,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('3') ? checkValidation('3') : false"
                             :rules="hasState('3') ? [() => checkValidation('3')] : [() => true]"
                             edit-icon="$complete"
@@ -141,7 +141,7 @@
                         >
                             Duration of pregnancy at delivery:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="3" data-question="3" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -150,7 +150,7 @@
                                     name="Duration of pregnancy at delivery"
                                     vid="duration_of_pregnancy_at_delivery"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.duration_of_pregnancy_at_delivery"
                                         row
                                         :error-messages="errors"
@@ -161,7 +161,7 @@
                                         <v-radio value="Term" label="Term"></v-radio>
                                         <v-radio value="Post-Date" label="Post-Date"></v-radio>
                                     </v-radio-group>
-                                </validation-provider>                                                
+                                </validation-provider>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -178,10 +178,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('4') && checkValidation('4')"
                             :rules="hasState('4') ? [() => checkValidation('4')] : [() => true]"
                             edit-icon="$complete"
@@ -199,7 +199,7 @@
                                     name="Condition of baby at birth"
                                     vid="condition_at_birth"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.condition_at_birth"
                                         row
                                         :error-messages="errors"
@@ -215,7 +215,7 @@
                                         If not healthy, Mention the Disease or abnormality:
                                     </v-col>
                                     <v-col cols="6" class="py-0">
-                                        <input-text 
+                                        <input-text
                                             v-model="form.condition_at_birth_disease"
                                             rules="required|min:2|max:50"
                                             label="Disease Name"
@@ -241,10 +241,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('5') ? checkValidation('5') : false"
                             :rules="hasState('5') ? [() => checkValidation('5')] : [() => true]"
                             edit-icon="$complete"
@@ -254,7 +254,7 @@
                         >
                             Sex:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="5" data-question="5" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -263,7 +263,7 @@
                                     name="Sex"
                                     vid="sex_orientation"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.sex_orientation"
                                         row
                                         :error-messages="errors"
@@ -274,7 +274,7 @@
                                         <v-radio value="Female" label="Female"></v-radio>
                                         <v-radio value="Others" label="Others"></v-radio>
                                     </v-radio-group>
-                                </validation-provider>                                                
+                                </validation-provider>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -291,10 +291,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('6') ? checkValidation('6') : false"
                             :rules="hasState('6') ? [() => checkValidation('6')] : [() => true]"
                             edit-icon="$complete"
@@ -304,7 +304,7 @@
                         >
                             Weight:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="6" data-question="6" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -313,7 +313,7 @@
                                     name="Sex"
                                     vid="weight"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.weight"
                                         row
                                         :error-messages="errors"
@@ -325,7 +325,7 @@
                                         <v-radio value="bteween_two_and_three_kg" label="2-3 kg"></v-radio>
                                         <v-radio value="more_than_3_kg" label=">3.0 kg"></v-radio>
                                     </v-radio-group>
-                                </validation-provider>                                                
+                                </validation-provider>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -342,10 +342,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('7') ? checkValidation('7') : false"
                             :rules="hasState('7') ? [() => checkValidation('7')] : [() => true]"
                             edit-icon="$complete"
@@ -355,7 +355,7 @@
                         >
                             APGAR score:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="7" data-question="7" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -364,7 +364,7 @@
                                     name="Sex"
                                     vid="apgar_score"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.apgar_score"
                                         row
                                         :error-messages="errors"
@@ -376,7 +376,7 @@
                                         <v-radio value="zero_to_three" label="0-3"></v-radio>
                                         <v-radio value="unknown" label="Not known"></v-radio>
                                     </v-radio-group>
-                                </validation-provider>                                                
+                                </validation-provider>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -393,10 +393,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('8') ? checkValidation('8') : false"
                             :rules="hasState('8') ? [() => checkValidation('8')] : [() => true]"
                             edit-icon="$complete"
@@ -406,7 +406,7 @@
                         >
                             Congenital craniofacial cleft:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="8" data-question="8" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
@@ -418,7 +418,7 @@
                                             name="Sex"
                                             vid="congenital_craniofacial_cleft"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.congenital_craniofacial_cleft"
                                                 row
                                                 :error-messages="errors"
@@ -430,7 +430,7 @@
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
-                                </v-row>                                                                                        
+                                </v-row>
                             </v-stepper-items>
                             <v-btn
                                 color="primary"
@@ -447,10 +447,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('9') && checkValidation('9')"
                             :rules="[() => !hasState('9') || (hasState('9') && checkValidation('9'))]"
                             edit-icon="$complete"
@@ -461,12 +461,12 @@
                             The clinical deformity to be defined using Tessier classification where relevant:
                             <span v-if="hasState('9') && !checkValidation('9')" >Field is required!</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="9" data-question="9" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
                                     <v-col md="3" class="py-0">
-                                        Site: 
+                                        Site:
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -475,7 +475,7 @@
                                             name="Tessier classification"
                                             vid="tessier_classification_site"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.tessier_classification_site"
                                                 row
                                                 :error-messages="errors"
@@ -491,7 +491,7 @@
                                 </v-row>
                                 <v-row>
                                     <v-col md="3" class="py-0">
-                                        Tessier type (if possible): Right 
+                                        Tessier type (if possible): Right
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -500,7 +500,7 @@
                                             name="Tessier classification"
                                             vid="tessier_classification_site_type_right"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.tessier_classification_site_type_right"
                                                 row
                                                 :error-messages="errors"
@@ -530,7 +530,7 @@
                                 </v-row>
                                 <v-row>
                                     <v-col md="3" class="py-0">
-                                        Tessier type (if possible): Left 
+                                        Tessier type (if possible): Left
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -539,7 +539,7 @@
                                             name="Tessier classification"
                                             vid="tessier_classification_site_type_left"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.tessier_classification_site_type_left"
                                                 row
                                                 :error-messages="errors"
@@ -569,7 +569,7 @@
                                 </v-row>
                                 <v-row>
                                     <v-col cols="3" class="py-0">
-                                        Anatomical type: 
+                                        Anatomical type:
                                     </v-col>
                                     <v-col cols="9" class="py-0">
                                         <validation-provider
@@ -578,7 +578,7 @@
                                             name="Tessier classification"
                                             vid="tessier_classification_anatomical_type"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.tessier_classification_anatomical_type"
                                                 row
                                                 :error-messages="errors"
@@ -587,6 +587,7 @@
                                             >
                                                 <v-radio value="Bony Cleft" label="Bony Cleft"></v-radio>
                                                 <v-radio value="Soft tissue cleft" label="Soft tissue cleft"></v-radio>
+                                                <v-radio value="Absent" label="Absent"></v-radio>
                                                 <v-radio value="Both" label="Both"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
@@ -594,7 +595,7 @@
                                 </v-row>
                                 <v-row>
                                     <v-col md="3" class="py-0">
-                                        Microtia: 
+                                        Microtia:
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -603,7 +604,7 @@
                                             name="Tessier classification"
                                             vid="tessier_classification_microtia"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.tessier_classification_microtia"
                                                 row
                                                 :error-messages="errors"
@@ -622,7 +623,7 @@
                                                     v-slot="{ errors, valid, dirty }"
                                                     vid="tessier_classification_microtia_type"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.tessier_classification_microtia_type"
                                                         row
                                                         :error-messages="errors"
@@ -641,7 +642,7 @@
                                 </v-row>
                                 <v-row>
                                     <v-col md="3" class="py-0">
-                                        Choanal Attresia: 
+                                        Choanal Attresia:
                                     </v-col>
                                     <v-col md="9" class="py-0">
                                         <validation-provider
@@ -650,7 +651,7 @@
                                             name="Tessier classification"
                                             vid="tessier_classification_choanal_attresia"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.tessier_classification_choanal_attresia"
                                                 row
                                                 :error-messages="errors"
@@ -672,7 +673,7 @@
                                                             v-slot="{ errors, valid, dirty }"
                                                             vid="tessier_classification_choanal_attresia_site"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.tessier_classification_choanal_attresia_site"
                                                                 row
                                                                 :error-messages="errors"
@@ -694,7 +695,7 @@
                                                             v-slot="{ errors, valid, dirty }"
                                                             vid="tessier_classification_choanal_attresia_anatomical_type"
                                                         >
-                                                            <v-radio-group 
+                                                            <v-radio-group
                                                                 v-model="form.tessier_classification_choanal_attresia_anatomical_type"
                                                                 row
                                                                 :error-messages="errors"
@@ -727,10 +728,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('10') ? checkValidation('10') && congenitalAnomaliesInvolvedSystemValidation : false"
                             :rules="hasState('10') ? [() => checkValidation('10') && congenitalAnomaliesInvolvedSystemValidation] : [() => true]"
                             edit-icon="$complete"
@@ -741,7 +742,7 @@
                             Other congenital anomalies:
                             <span v-if="!congenitalAnomaliesInvolvedSystemValidation">Please, select involved system</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="10" data-question="10" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -752,7 +753,7 @@
                                             name="Other congenital anomalies"
                                             vid="other_congenital_anomalies"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.other_congenital_anomalies"
                                                 row
                                                 :error-messages="errors"
@@ -876,10 +877,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('11') ? checkValidation('11'): false"
                             :rules="hasState('11') ? [() => checkValidation('11')] : [() => true]"
                             edit-icon="$complete"
@@ -889,7 +890,7 @@
                         >
                             Any syndrome suspected:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="11" data-question="11" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -900,7 +901,7 @@
                                             name="Any syndrome suspected"
                                             vid="any_syndrome_suspected"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.any_syndrome_suspected"
                                                 row
                                                 :error-messages="errors"
@@ -929,10 +930,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('12') ? checkValidation('12'): false"
                             :rules="hasState('12') ? [() => checkValidation('12')] : [() => true]"
                             edit-icon="$complete"
@@ -942,7 +943,7 @@
                         >
                             Eyes:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="12" data-question="12" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -956,7 +957,7 @@
                                             name="Corneal opacities and other deformities:"
                                             vid="corneal_opacities_and_other_deformities"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.corneal_opacities_and_other_deformities"
                                                 row
                                                 :error-messages="errors"
@@ -985,10 +986,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('13') ? checkValidation('13') && ringConstrictionsInvolvingAreaValidation : false"
                             :rules="hasState('13') ? [() => checkValidation('13') && ringConstrictionsInvolvingAreaValidation] : [() => true]"
                             edit-icon="$complete"
@@ -999,7 +1000,7 @@
                             Ring constrictions, carefully looking at subtle constrictions (to be photographed with contralateral site as comparison):
                             <span v-if="!ringConstrictionsInvolvingAreaValidation">Please, select involved system</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="13" data-question="13" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -1010,7 +1011,7 @@
                                             name="Ring Constrictions"
                                             vid="ring_constrictions"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.ring_constrictions"
                                                 row
                                                 :error-messages="errors"
@@ -1079,10 +1080,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('14') ? checkValidation('14') : false"
                             :rules="hasState('14') ? [() => checkValidation('14')] : [() => true]"
                             edit-icon="$complete"
@@ -1092,7 +1093,7 @@
                         >
                             Nasal airway obstruction (tested by tissue paper test, occluding the nose if possible and nasal anemometry, if available):
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="14" data-question="14" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -1103,7 +1104,7 @@
                                             name="Nasal Obstruction"
                                             vid="nasal_obstruction"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.nasal_obstruction"
                                                 row
                                                 :error-messages="errors"
@@ -1127,7 +1128,7 @@
                                                     name="Nasal Obstruction Treated"
                                                     vid="nasal_obstruction_treated"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.nasal_obstruction_treated"
                                                         row
                                                         :error-messages="errors"
@@ -1158,10 +1159,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('15') ? checkValidation('15') : false"
                             :rules="hasState('15') ? [() => checkValidation('15')] : [() => true]"
                             edit-icon="$complete"
@@ -1171,7 +1172,7 @@
                         >
                             Palatal abnormality:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="15" data-question="15" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -1182,7 +1183,7 @@
                                             name="Palatal abnormality"
                                             vid="palatal_abnormality"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.palatal_abnormality"
                                                 row
                                                 :error-messages="errors"
@@ -1206,7 +1207,7 @@
                                                     name="Nasal Obstruction Treated"
                                                     vid="palatal_abnormality_type"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.palatal_abnormality_type"
                                                         row
                                                         :error-messages="errors"
@@ -1242,10 +1243,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('16') ? checkValidation('16') : false"
                             :rules="hasState('16') ? [() => checkValidation('16')] : [() => true]"
                             edit-icon="$complete"
@@ -1255,7 +1256,7 @@
                         >
                             Cleft lip:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="16" data-question="16" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -1266,7 +1267,7 @@
                                             name="Cleft lip"
                                             vid="cleft_lip"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.cleft_lip"
                                                 row
                                                 :error-messages="errors"
@@ -1290,7 +1291,7 @@
                                                     name="Nasal Obstruction Treated"
                                                     vid="cleft_lip_type"
                                                 >
-                                                    <v-radio-group 
+                                                    <v-radio-group
                                                         v-model="form.cleft_lip_type"
                                                         row
                                                         :error-messages="errors"
@@ -1325,7 +1326,7 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
                     </v-stepper>
                 </v-card-text>
@@ -1338,9 +1339,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -1483,10 +1484,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -1498,14 +1499,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true
