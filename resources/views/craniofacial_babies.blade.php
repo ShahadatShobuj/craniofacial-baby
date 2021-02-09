@@ -95,7 +95,7 @@
                                                 <th>Baby Name</th>
                                                 <th>Father Name</th>
                                                 <th>Mother Name</th>
-                                                <th>Email</th>
+                                                {{-- <th>Email</th> --}}
                                                 <th>Contact</th>
                                                 {{-- <th>Address</th> --}}
                                                 <th>Consanguinity</th>
@@ -221,7 +221,7 @@ const app = new Vue({
                                 { data: 'baby_name', name: 'baby_name'},
                                 { data: 'father_name', name: 'father_name'},
                                 { data: 'mother_name', name: 'mother_name'},
-                                { data: 'email', name: 'email'},
+                                // { data: 'email', name: 'email'},
                                 { data: 'first_contact', name: 'first_contact'},
                                 // { data: 'address', name: 'address', render: 'address.address_type'},
                                 { data: 'consanguinity', name: 'consanguinity', render:function(data, type, row) {
