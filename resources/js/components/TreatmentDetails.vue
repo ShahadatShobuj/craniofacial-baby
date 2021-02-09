@@ -255,8 +255,8 @@
                                     <v-col cols="3" class="py-0">
                                         <v-checkbox
                                             v-model="form.orthodontic_care"
-                                            label="Applience"
-                                            value="Applience"
+                                            label="Appliance"
+                                            value="Appliance"
                                             :data-optional="true"
                                             class="my-0"
                                         >
