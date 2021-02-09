@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'Ananya Hasan',
-                'email' => 'ananyahasan25@gmail.com',
+                'email' => 'anannyahasan25@gmail.com',
                 'email_verified_at' => now(),
                 'role_id' => 1,
                 'password' => Hash::make('pass@123'),
