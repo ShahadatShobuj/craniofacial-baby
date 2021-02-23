@@ -34,12 +34,15 @@ class CraniofacialCleftBabyController extends Controller
         return response()->json($data);
     }
 
-    public function craniofacial_baby_show (Request $request) {
-        return view('craniofacial_baby');
+    public function craniofacial_baby_show (Request $request,  CraniofacialCleftBaby $cleft_baby) {
+        // return view('craniofacial_baby');
+        return view('craniofacial_baby', ['cleft_baby' => $cleft_baby->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first()]);
     }
 
-    public function craniofacial_baby (Request $request, CraniofacialCleftBaby $cleft_baby) {
-        return response()->json($cleft_baby);
+    public function craniofacial_baby (Request $request) {
+        $baby = CraniofacialCleftBaby::findOrFail($request->cleft_baby)->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first();
+        // return 'test';
+        return response()->json($baby);
     }
 
     public function checkEmail (EmailRequest $request) {
@@ -56,8 +59,8 @@ class CraniofacialCleftBabyController extends Controller
         $clefBabyInput = $contactDetails;
         $user = auth()->user();
         $clefBabyInput['created_by'] = $user->name;
-        $motherInput = $inputs['mother'];
         $fatherInput = $inputs['father'];
+        $motherInput = $inputs['mother'];
         $newbornInput = $inputs['newborn'];
         $deliveryInput = $inputs['delivery'];
         $pregnancyInput = $inputs['pregnancy'];
@@ -73,9 +76,9 @@ class CraniofacialCleftBabyController extends Controller
         try {
             $CleftBaby = CraniofacialCleftBaby::create($clefBabyInput);
             $address = $CleftBaby->address()->create($addressInput);
+            $father = $CleftBaby->father()->create($fatherInput);
             $mother = $CleftBaby->mother()->create($motherInput);
             $pregnancy = $mother->pregnancy()->create($pregnancyInput);
-            $father = $CleftBaby->father()->create($fatherInput);
             $delivery = $mother->delivery()->create($deliveryInput);
             $newborn = $mother->newborn()->create($newbornInput);
             $speechDevelopment = $CleftBaby->speechDevelopment()->create($speechInput);
