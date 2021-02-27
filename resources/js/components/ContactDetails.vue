@@ -249,8 +249,8 @@
                                                 :success="valid && dirty"
                                                 hide-details
                                             >
-                                                <v-radio value="urban" label="Urban"></v-radio>
-                                                <v-radio value="rural" label="Rural"></v-radio>
+                                                <v-radio value="Urban" label="Urban"></v-radio>
+                                                <v-radio value="Rural" label="Rural"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -531,7 +531,7 @@
                             data-question="10"
                             class="py-1"
                         >
-                            H/O preconceptional folic acid supplementation:
+                            H/O periconceptional folic acid supplementation:
                         </v-stepper-step>
 
                         <v-stepper-content step="10" data-question="10" class="my-0 py-0">

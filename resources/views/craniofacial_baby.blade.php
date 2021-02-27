@@ -178,7 +178,7 @@
                                                             class="form-group mb-0 {{ $errors->has('guardian_name') ? ' has-danger' : '' }} ">
                                                             <input
                                                                 type="radio"
-                                                                @if($cleft_baby->address->address_type === 'urbarn') selected @endif
+                                                                @if($cleft_baby->address->address_type == 'urban') checked @endif
                                                                 name="address_type"
                                                                 id="urban"
                                                                 value="urban"
@@ -194,7 +194,7 @@
                                                                 name="address_type"
                                                                 id="rural"
                                                                 value="rural"
-                                                                @if($cleft_baby->address->address_type === 'rural') selected @endif
+                                                                @if($cleft_baby->address->address_type == 'rural') checked @endif
                                                             >
                                                         </div>
                                                         <label for="rural" class="ml-2 mb-0">Rural</label>
@@ -333,7 +333,7 @@
                                                                 name="consanguineous_marriage"
                                                                 id="consanguineous_marriage_true"
                                                                 value="true"
-                                                                @if($cleft_baby->consanguineous_marriage === 'true') selected @endif
+                                                                @if($cleft_baby->consanguineous_marriage == true) checked @endif
                                                             >
                                                         </div>
                                                         <label for="consanguineous_marriage_true" class="ml-2 mb-0">Yes</label>
@@ -346,7 +346,7 @@
                                                                 name="consanguineous_marriage"
                                                                 id="consanguineous_marriage_false"
                                                                 value="false"
-                                                                @if($cleft_baby->consanguineous_marriage === 'false') selected @endif
+                                                                @if($cleft_baby->consanguineous_marriage == false) checked @endif
                                                             >
                                                         </div>
                                                         <label for="consanguineous_marriage_false" class="ml-2 mb-0">No</label>
@@ -365,7 +365,7 @@
                                                                     name="consanguinity"
                                                                     id="consanguinity_maternal_cousin"
                                                                     value="maternal_cousin"
-                                                                    @if($cleft_baby->consanguinity === 'maternal_cousin') selected @endif
+                                                                    @if($cleft_baby->consanguinity == 'maternal_cousin') checked @endif
                                                                 >
                                                             </div>
                                                             <label for="consanguinity_maternal_cousin" class="ml-2 mb-0">Cousin (Maternal)</label>
@@ -377,7 +377,7 @@
                                                                     type="radio"
                                                                     name="consanguinity"
                                                                     id="consanguinity_paternal_cousin" value="paternal_cousin"
-                                                                    @if($cleft_baby->consanguinity === 'paternal_cousin') selected @endif
+                                                                    @if($cleft_baby->consanguinity == 'paternal_cousin') checked @endif
                                                                 >
                                                             </div>
                                                             <label for="consanguinity_paternal_cousin" class="ml-2 mb-0">Cousin (Paternal)</label>
@@ -390,7 +390,7 @@
                                                                     name="consanguinity"
                                                                     id="consanguinity_others"
                                                                     value="others"
-                                                                    @if($cleft_baby->consanguinity === 'consanguinity_others') selected @endif
+                                                                    @if($cleft_baby->consanguinity == 'consanguinity_others') checked @endif
                                                                 >
                                                             </div>
                                                             <label for="consanguinity_others" class="ml-2 mb-0">Others</label>
@@ -413,7 +413,7 @@
                                                                 name="family_cleft"
                                                                 id="family_cleft_true"
                                                                 value="true"
-                                                                @if($cleft_baby->family_cleft === 'true') selected @endif
+                                                                @if($cleft_baby->family_cleft == 'true') checked @endif
                                                             >
                                                         </div>
                                                         <label for="family_cleft_true" class="ml-2 mb-0">Yes</label>
@@ -426,7 +426,7 @@
                                                                 name="family_cleft"
                                                                 id="family_cleft_false"
                                                                 value="false"
-                                                                @if($cleft_baby->family_cleft === 'false') selected @endif
+                                                                @if($cleft_baby->family_cleft == 'false') checked @endif
                                                             >
                                                         </div>
                                                         <label for="family_cleft_false" class="ml-2 mb-0">No</label>
@@ -445,7 +445,7 @@
                                                                     name="family_cleft_relatives"
                                                                     id="family_cleft_relatives_parents"
                                                                     value="parents"
-                                                                    @if($cleft_baby->family_cleft_relatives === 'parents') selected @endif
+                                                                    @if($cleft_baby->family_cleft_relatives == 'parents') checked @endif
                                                                 >
                                                             </div>
                                                             <label for="family_cleft_relatives_parents" class="ml-2 mb-0">Parents</label>
@@ -458,7 +458,7 @@
                                                                     name="family_cleft_relatives"
                                                                     id="family_cleft_relatives_offspring"
                                                                     value="offspring"
-                                                                    @if($cleft_baby->family_cleft_relatives === 'offspring') selected @endif
+                                                                    @if($cleft_baby->family_cleft_relatives == 'offspring') checked @endif
                                                                 >
                                                             </div>
                                                             <label for="family_cleft_relatives_offspring" class="ml-2 mb-0">Offspring</label>
@@ -471,7 +471,7 @@
                                                                     name="family_cleft_relatives"
                                                                     id="family_cleft_relatives_siblings"
                                                                     value="siblings"
-                                                                    @if($cleft_baby->family_cleft_relatives === 'siblings') selected @endif
+                                                                    @if($cleft_baby->family_cleft_relatives == 'siblings') checked @endif
                                                                 >
                                                             </div>
                                                             <label for="family_cleft_relatives_siblings" class="ml-2 mb-0">Siblings</label>
@@ -480,6 +480,217 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <label class="pr-4">{{ __('H/O periconceptional folic acid supplementation: ') }}</label>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex">
+                                                    <div class="d-flex align-items-center px-5">
+                                                        <div
+                                                            class="form-group mb-0 {{ $errors->has('folic_acid_supplementation') ? ' has-danger' : '' }} ">
+                                                            <input
+                                                                type="radio"
+                                                                name="folic_acid_supplementation"
+                                                                id="folic_acid_supplementation_true"
+                                                                value="true"
+                                                                @if($cleft_baby->folic_acid_supplementation == true) checked @endif
+                                                            >
+                                                        </div>
+                                                        <label for="folic_acid_supplementation_true" class="ml-2 mb-0">Yes</label>
+                                                    </div>
+                                                    <div class="d-flex align-items-center px-5">
+                                                        <div
+                                                            class="form-group mb-0 {{ $errors->has('folic_acid_supplementation') ? ' has-danger' : '' }}">
+                                                            <input
+                                                                type="radio"
+                                                                name="folic_acid_supplementation"
+                                                                id="folic_acid_supplementation_false"
+                                                                value="false"
+                                                                @if($cleft_baby->folic_acid_supplementation == false) checked @endif
+                                                            >
+                                                        </div>
+                                                        <label for="folic_acid_supplementation_false" class="ml-2 mb-0">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <label class="pr-4">{{ __('Maternity Diet: ') }}</label>
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex">
+                                                    <div class="d-flex align-items-center px-5">
+                                                        <div
+                                                            class="form-group mb-0 {{ $errors->has('maternity_diet') ? ' has-danger' : '' }} ">
+                                                            <input
+                                                                type="radio"
+                                                                name="maternity_diet"
+                                                                id="maternity_diet_adequate"
+                                                                value="Adequate"
+                                                                @if($cleft_baby->maternity_diet == 'Adequate') checked @endif
+                                                            >
+                                                        </div>
+                                                        <label for="maternity_diet_adequate" class="ml-2 mb-0">Adequate</label>
+                                                    </div>
+                                                    <div class="d-flex align-items-center px-5">
+                                                        <div
+                                                            class="form-group mb-0 {{ $errors->has('maternity_diet') ? ' has-danger' : '' }}">
+                                                            <input
+                                                                type="radio"
+                                                                name="maternity_diet"
+                                                                id="maternity_diet_inadeqate"
+                                                                value="Inadequate"
+                                                                @if($cleft_baby->maternity_diet == 'Inadequate') checked @endif
+                                                            >
+                                                        </div>
+                                                        <label for="maternity_diet_inadeqate" class="ml-2 mb-0">Inadequate</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label class="pr-4">{{ __('Particulars of Mother: ') }}</label>
+                                        <ol style="list-style-type: lower-alpha">
+                                            <li>
+                                                <div class="d-flex">
+                                                    <label class="pr-4 font-weight-bold">{{ __('Occupation: ') }}</label>
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_occupation') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_occupation"
+                                                                        id="mother_occupation_housewife"
+                                                                        value="Housewife"
+                                                                        @if($cleft_baby->mother->occupation == 'Housewife') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_occupation_housewife" class="ml-2 mb-0">Housewife</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_occupation') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_occupation"
+                                                                        id="mother_occupation_business"
+                                                                        value="Business"
+                                                                        @if($cleft_baby->mother->occupation == 'Business') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_occupation_business" class="ml-2 mb-0">Business</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_occupation') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_occupation"
+                                                                        id="mother_occupation_service"
+                                                                        value="Service"
+                                                                        @if($cleft_baby->mother->occupation == 'Service') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_occupation_service" class="ml-2 mb-0">Service</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_occupation') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_occupation"
+                                                                        id="mother_occupation_mw"
+                                                                        value="Manual Worker"
+                                                                        @if($cleft_baby->mother->occupation == 'Manual Worker') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_occupation_mw" class="ml-2 mb-0">Manual Worker</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_occupation') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_occupation"
+                                                                        id="mother_occupation_others"
+                                                                        value="Others"
+                                                                        @if($cleft_baby->mother->occupation == 'Others') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_occupation_others" class="ml-2 mb-0">Others</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="d-flex">
+                                                    <label class="pr-4 font-weight-bold">{{ __('Personal: ') }}</label>
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_personal') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_personal"
+                                                                        id="mother_personal_smoking"
+                                                                        value="Smoking"
+                                                                        @if($cleft_baby->mother->habbit == 'Smoking') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_personal_smoking" class="ml-2 mb-0">Smoking</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_personal') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_personal"
+                                                                        id="mother_personal_alcohol"
+                                                                        value="Alcohol"
+                                                                        @if($cleft_baby->mother->habbit == 'Alcohol') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_personal_alcohol" class="ml-2 mb-0">Alcohol</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_personal') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_personal"
+                                                                        id="mother_personal_non_smoking"
+                                                                        value="Non smoking"
+                                                                        @if($cleft_baby->mother->habbit == 'Non smoking') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_personal_non_smoking" class="ml-2 mb-0">Non smoking</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center px-5">
+                                                                <div
+                                                                    class="form-group mb-0 {{ $errors->has('mother_personal') ? ' has-danger' : '' }} ">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="mother_personal"
+                                                                        id="mother_personal_exposed"
+                                                                        value="Exposed tobacco"
+                                                                        @if($cleft_baby->mother->habbit == 'Exposed tobacco') checked @endif
+                                                                    >
+                                                                </div>
+                                                                <label for="mother_personal_exposed" class="ml-2 mb-0">Exposed tobacco</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ol>
+
                                     </li>
                                 </ol>
                             </form>
