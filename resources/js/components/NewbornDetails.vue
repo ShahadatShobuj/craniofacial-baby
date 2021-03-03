@@ -427,6 +427,7 @@
                                             >
                                                 <v-radio value="Antenatal" label="Antenatal"></v-radio>
                                                 <v-radio value="Postnatal" label="Postnatal"></v-radio>
+                                                <v-radio value="Not known" label="Not known"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>

@@ -126,21 +126,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_p === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_p_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_p_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (ব) |b|:
@@ -164,21 +149,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_b === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_b_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_b_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (ম) |m|:
@@ -202,21 +172,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_m === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_m_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_m_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -247,21 +202,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_c === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_c_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_c_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (জ) |j|:
@@ -285,21 +225,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_j === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_j_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_j_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -330,21 +255,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_k === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_k_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_k_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (গ) |g|:
@@ -368,21 +278,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_g === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_g_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_g_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -413,21 +308,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_f === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_f_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_f_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (ভ) |V|:
@@ -451,21 +331,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_v === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_v_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_v_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (শ) |S|:
@@ -489,21 +354,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_Sh === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_Sh_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_Sh_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (স) |s|:
@@ -527,21 +377,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_s === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_s_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_s_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -572,21 +407,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_a === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_a_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_a_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (ই) |i|:
@@ -610,21 +430,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_i === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_i_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_i_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                     <v-col cols="3" class="py-0">
                                                         (উ) |u|:
@@ -648,21 +453,6 @@
                                                                 <v-radio value="Not yet" label="Not developed yet"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                        <v-row v-if="form.development_of_u === 'Yes'">
-                                                            <v-col cols="3">
-                                                                If Yes,
-                                                            </v-col>
-                                                            <v-col cols="9" class="pt-0">
-                                                                <input-text
-                                                                    v-model="form.development_of_u_description"
-                                                                    rules="required|min:2|max:50"
-                                                                    label="Description"
-                                                                    vid="development_of_u_description"
-                                                                    :counter="50"
-                                                                >
-                                                                </input-text>
-                                                            </v-col>
-                                                        </v-row>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -968,20 +758,20 @@ export default {
                 development_of_a: null,
                 development_of_i: null,
                 development_of_u: null,
-                development_of_p_description: null,
-                development_of_b_description: null,
-                development_of_m_description: null,
-                development_of_c_description: null,
-                development_of_j_description: null,
-                development_of_k_description: null,
-                development_of_g_description: null,
-                development_of_f_description: null,
-                development_of_v_description: null,
-                development_of_S_descriptionh: null,
-                development_of_s_description: null,
-                development_of_a_description: null,
-                development_of_i_description: null,
-                development_of_u_description: null,
+                // development_of_p_description: null,
+                // development_of_b_description: null,
+                // development_of_m_description: null,
+                // development_of_c_description: null,
+                // development_of_j_description: null,
+                // development_of_k_description: null,
+                // development_of_g_description: null,
+                // development_of_f_description: null,
+                // development_of_v_description: null,
+                // development_of_S_descriptionh: null,
+                // development_of_s_description: null,
+                // development_of_a_description: null,
+                // development_of_i_description: null,
+                // development_of_u_description: null,
 
                 nasality: null,
                 nasality_type: null,

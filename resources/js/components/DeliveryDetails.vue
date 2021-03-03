@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="checkValidation('1')"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -33,7 +33,7 @@
                                             name="Delivery mode"
                                             vid="mode"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.mode"
                                                 row
                                                 :error-messages="errors"
@@ -62,10 +62,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="checkValidation('2')"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -85,7 +85,7 @@
                                             name="Delivery type"
                                             vid="type"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.type"
                                                 row
                                                 :error-messages="errors"
@@ -114,9 +114,9 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="checkValidation('3')"
                             :rules="hasState('3') ? [() => checkValidation('3')] : [() => true]"
                             edit-icon="$complete"
@@ -136,7 +136,7 @@
                                             name="Delivery membranes rupture type"
                                             vid="membranes_rupture_type"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.membranes_rupture_type"
                                                 row
                                                 :error-messages="errors"
@@ -145,6 +145,7 @@
                                             >
                                                 <v-radio value="Spontaneous" label="Spontaneous rupture of  membranes"></v-radio>
                                                 <v-radio value="Artificial" label="Artificial rupture of  membranes (ARM)"></v-radio>
+                                                <v-radio value="None" label="None"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -165,9 +166,9 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="checkValidation('4')"
                             :rules="hasState('4') ? [() => checkValidation('4')] : [() => true]"
                             edit-icon="$complete"
@@ -175,7 +176,7 @@
                             data-question="4"
                             class="py-1"
                         >
-                            Time between rupture of  membranes and delivery:
+                            Time between rupture of membranes and delivery:
                         </v-stepper-step>
                         <v-stepper-content step="4" data-question="4" class="my-0 py-0">
                             <v-stepper-items>
@@ -187,7 +188,7 @@
                                             name="Delivery delay after membranes rupture"
                                             vid="time_after_membranes_rupture"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.time_after_membranes_rupture"
                                                 row
                                                 :error-messages="errors"
@@ -198,6 +199,7 @@
                                                 <v-radio value="one_to_six_hours" label="1-6 Hours"></v-radio>
                                                 <v-radio value="seven_to_twenty_four_hours" label="7-24 Hours"></v-radio>
                                                 <v-radio value="more_than_twenty_four_hours" label="> 24 Hours"></v-radio>
+                                                <v-radio value="None" label="None"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -210,7 +212,7 @@
                                 outlined
                             >
                                 Back
-                            </v-btn>               
+                            </v-btn>
                         </v-stepper-content>
                     </v-stepper>
                 </v-card-text>
@@ -223,9 +225,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -307,10 +309,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -322,14 +324,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true
