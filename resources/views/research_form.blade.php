@@ -379,20 +379,20 @@
                                                                             <v-row>
                                                                                 <v-col cols="12" class="py-0">
                                                                                     <input-text
-                                                                                        v-model="form.outcome.marital_status_child"
+                                                                                        v-model="form.outcome.number_of_child"
                                                                                         rules="min:1|numeric"
                                                                                         label="Number of child"
-                                                                                        vid="marital_status_child"
+                                                                                        vid="number_of_child"
                                                                                         :data-optional="true"
                                                                                     >
                                                                                     </input-text>
                                                                                 </v-col>
                                                                                 <v-col cols="12" class="py-0">
                                                                                     <input-text
-                                                                                        v-model="form.outcome.marital_status_abnormal_child"
+                                                                                        v-model="form.outcome.number_of_abnormal_child"
                                                                                         rules="min:1|numeric"
                                                                                         label="Number of abnormal child"
-                                                                                        vid="marital_status_abnormal_child"
+                                                                                        vid="number_of_abnormal_child"
                                                                                         :data-optional="true"
                                                                                     >
                                                                                     </input-text>
@@ -647,21 +647,6 @@ const app = new Vue({
             step: '1',
             form: {
                 outcome: {
-                    // standard_photographic_views: 'Available',
-                    // video_speech_recordings: 'Available',
-                    // vision_test: 'Available',
-                    // nasal_airway_evaluation: 'Done',
-                    // educational_occupational_attainments: 'Done',
-                    // marital_status: 'Single',
-                    // number_of_child: null,
-                    // number_of_abnormal_child: null,
-
-                    // parents_review_of_appearance: 'Satisfied',
-                    // parents_review_of_breathing: 'Satisfied',
-                    // parents_review_of_dental: 'Satisfied',
-                    // parents_review_of_eating: 'Satisfied',
-                    // parents_review_of_speech: 'Satisfied',
-
                     standard_photographic_views: null,
                     video_speech_recordings: null,
                     vision_test: null,
