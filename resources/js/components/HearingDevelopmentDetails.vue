@@ -480,7 +480,7 @@
                                                 <validation-provider
                                                     rules="required"
                                                     v-slot="{ errors, valid, dirty }"
-                                                    name="Response By Calling Name"
+                                                    name="test_boa"
                                                     vid="test_boa"
                                                 >
                                                     <v-radio-group
@@ -520,6 +520,61 @@
                                                             rules="required|min:2|max:50"
                                                             label="Abnormality type"
                                                             vid="test_boa_abnormality_type"
+                                                            :counter="50"
+                                                        >
+                                                        </input-text>
+                                                    </v-col>
+                                                </v-row>
+                                            </v-col>
+                                        </v-row>
+                                        <v-row>
+                                            <v-col md="4" class="py-0">
+                                                OAE (Otoacoustic Emission test):
+                                            </v-col>
+                                            <v-col md="8" class="py-0">
+                                                <validation-provider
+                                                    rules="required"
+                                                    v-slot="{ errors, valid, dirty }"
+                                                    name="test_oae"
+                                                    vid="test_oae"
+                                                >
+                                                    <v-radio-group
+                                                        v-model="form.test_oae"
+                                                        row
+                                                        :error-messages="errors"
+                                                        :success="valid && dirty"
+                                                        class="my-0"
+                                                    >
+                                                        <v-radio :value="true" label="Yes"></v-radio>
+                                                        <v-radio :value="false" label="No"></v-radio>
+                                                    </v-radio-group>
+                                                </validation-provider>
+                                                <v-row v-if="form.test_oae">
+                                                    <v-col class="py-0">
+                                                        <validation-provider
+                                                            rules="required"
+                                                            v-slot="{ errors, valid, dirty }"
+                                                            name="Response By Calling Name"
+                                                            vid="test_oae_report"
+                                                        >
+                                                            <v-radio-group
+                                                                v-model="form.test_oae_report"
+                                                                row
+                                                                :error-messages="errors"
+                                                                :success="valid && dirty"
+                                                                class="my-0"
+                                                            >
+                                                                <v-radio value="Normal" label="Normal"></v-radio>
+                                                                <v-radio value="Abnormal" label="Abnormal"></v-radio>
+                                                            </v-radio-group>
+                                                        </validation-provider>
+                                                    </v-col>
+                                                    <v-col class="py-0" v-if="form.test_oae_report === 'Abnormal'">
+                                                        <input-text
+                                                            v-model="form.test_oae_abnormality_type"
+                                                            rules="required|min:2|max:50"
+                                                            label="Abnormality type"
+                                                            vid="test_oae_abnormality_type"
                                                             :counter="50"
                                                         >
                                                         </input-text>
@@ -574,33 +629,6 @@ export default {
             booted: false,
             question: '1',
             form: {
-                // response_calling_by_name: true,
-                // screening_by_ling_sound_s: true,
-                // screening_by_ling_sound_Sh: true,
-                // screening_by_ling_sound_a: true,
-                // screening_by_ling_sound_i: true,
-                // screening_by_ling_sound_u: true,
-                // screening_by_ling_sound_m: true,
-
-                // test_pta: false,
-                // test_pta_report: null,
-                // test_pta_abnormality_type: null,
-                // test_abr: false,
-                // test_abr_report: null,
-                // test_abr_abnormality_type: null,
-                // test_srt: false,
-                // test_srt_report: null,
-                // test_srt_abnormality_type: null,
-                // test_tympanometry: false,
-                // test_tympanometry_report: null,
-                // test_tympanometry_abnormality_type: null,
-                // test_play_audiometry: false,
-                // test_play_audiometry_report: null,
-                // test_play_audiometry_abnormality_type: null,
-                // test_boa: false,
-                // test_boa_report: null,
-                // test_boa_abnormality_type: null,
-
                 response_calling_by_name: null,
                 screening_by_ling_sound_s: null,
                 screening_by_ling_sound_Sh: null,
@@ -627,6 +655,9 @@ export default {
                 test_boa: null,
                 test_boa_report: null,
                 test_boa_abnormality_type: null,
+                test_oae: null,
+                test_oae_report: null,
+                test_oae_abnormality_type: null,
             },
             stepperState: [],
         };
