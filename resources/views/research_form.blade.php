@@ -39,7 +39,7 @@
                                     :complete="step > 3"
                                     step="3"
                                     class="py-1"
-                                    :editable="step > 3"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Particulars of Pregnancy
