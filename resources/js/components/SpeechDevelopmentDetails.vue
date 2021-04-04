@@ -489,7 +489,7 @@
                                                     vid="nasality_type"
                                                 >
                                                     <v-radio-group
-                                                        v-model="form.cleft_lip_type"
+                                                        v-model="form.nasality_type"
                                                         row
                                                         :error-messages="errors"
                                                         :success="valid && dirty"
