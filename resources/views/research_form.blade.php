@@ -5,7 +5,7 @@
     <v-container>
         <v-row class="justify-content-center">
             <v-col md="10" sm="12">
-                <validation-observer tag="div" v-slot="{ handleSubmit, invalid, reset }">
+                {{-- <validation-observer tag="div" v-slot="{ handleSubmit, invalid, reset }"> --}}
                     <v-card>
                         <v-card-title>
                             <h3 class="w-100 text-center">
@@ -464,16 +464,23 @@
                         </v-card-text>
                         <v-card-actions class="text-right px-10">
                             <v-spacer />
-                            <v-btn type="reset" :disabled="invalid" outlined>
+                            {{-- <v-btn type="reset" :disabled="invalid" outlined>
                                 Reset
                             </v-btn>
                             <v-btn type="submit" :loading="processing" class="primary" :disabled="invalid"
                                 @click.prevent="handleSubmit(submit)">
                                 Submit
+                            </v-btn> --}}
+                            <v-btn type="reset" outlined>
+                                Reset
+                            </v-btn>
+                            <v-btn type="submit" :loading="processing" class="primary"
+                                @click.prevent="handleSubmit(submit)">
+                                Submit
                             </v-btn>
                         </v-card-actions>
                     </v-card>
-                </validation-observer>
+                {{-- </validation-observer> --}}
             </v-col>
         </v-row>
         <v-row class="justify-content-center">
