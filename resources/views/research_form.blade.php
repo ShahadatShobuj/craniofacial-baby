@@ -475,7 +475,7 @@
                                 Reset
                             </v-btn>
                             <v-btn type="submit" :loading="processing" class="primary"
-                                @click.prevent="handleSubmit(submit)">
+                                @click.prevent="submit">
                                 Submit
                             </v-btn>
                         </v-card-actions>
