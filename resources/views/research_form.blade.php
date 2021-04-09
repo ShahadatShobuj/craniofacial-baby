@@ -17,7 +17,7 @@
                                     :complete="step > 1"
                                     step="1"
                                     class="py-1"
-                                    :editable="step > 1"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Contact Information
@@ -28,7 +28,7 @@
                                     :complete="step > 2"
                                     step="2"
                                     class="py-1"
-                                    :editable="step > 2"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Particulars of Mother
@@ -39,7 +39,7 @@
                                     :complete="step > 3"
                                     step="3"
                                     class="py-1"
-                                    :editable="step > 3"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Particulars of Pregnancy
@@ -50,7 +50,7 @@
                                     :complete="step > 4"
                                     step="4"
                                     class="py-1"
-                                    :editable="step > 4"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Particulars of Father
@@ -61,7 +61,7 @@
                                     :complete="step > 5"
                                     step="5"
                                     class="py-1"
-                                    :editable="step > 5"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Delivery Details
@@ -72,7 +72,7 @@
                                     :complete="step > 6"
                                     step="6"
                                     class="py-1"
-                                    :editable="step > 6"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Particulars of Newborn
@@ -83,7 +83,7 @@
                                     :complete="step > 7"
                                     step="7"
                                     class="py-1"
-                                    :editable="step > 7"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Speech Development
@@ -94,7 +94,7 @@
                                     :complete="step > 8"
                                     step="8"
                                     class="py-1"
-                                    :editable="step > 8"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Hearing Development
@@ -105,7 +105,7 @@
                                     :complete="step > 9"
                                     step="9"
                                     class="py-1"
-                                    :editable="step > 9"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Treatment Details
@@ -116,7 +116,7 @@
                                     :complete="step > 10"
                                     step="10"
                                     class="py-1"
-                                    :editable="step > 9"
+                                    editable
                                     edit-icon="$complete"
                                 >
                                     Outcome
