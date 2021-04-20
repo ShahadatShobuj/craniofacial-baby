@@ -1,9 +1,9 @@
 <template>
-    <validation-observer
+    <!-- <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
-    >
+    > -->
         <v-form
             ref="form"
             name="newborn"
@@ -159,7 +159,7 @@
                                     >
                                         <v-radio value="Preterm" label="Preterm"></v-radio>
                                         <v-radio value="Term" label="Term"></v-radio>
-                                        <v-radio value="Post-Date" label="Post-Date"></v-radio>
+                                        <v-radio value="Post-dated" label="Post-dated"></v-radio>
                                     </v-radio-group>
                                 </validation-provider>
                             </v-stepper-items>
@@ -427,7 +427,7 @@
                                             >
                                                 <v-radio value="Antenatal" label="Antenatal"></v-radio>
                                                 <v-radio value="Postnatal" label="Postnatal"></v-radio>
-                                                <v-radio value="Not known" label="Not known"></v-radio>
+                                                <v-radio value="unknown" label="Not known"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -483,9 +483,9 @@
                                                 :success="valid && dirty"
                                                 class="my-0"
                                             >
-                                                <v-radio value="Left" label="Left"></v-radio>
-                                                <v-radio value="Right" label="Right"></v-radio>
-                                                <v-radio value="Bilateral" label="Bilateral"></v-radio>
+                                                <v-radio value="left" label="Left"></v-radio>
+                                                <v-radio value="right" label="Right"></v-radio>
+                                                <v-radio value="bilateral" label="Bilateral"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -524,7 +524,7 @@
                                                 <v-radio value="13" label="13"></v-radio>
                                                 <v-radio value="14" label="14"></v-radio>
                                                 <v-radio value="31" label="31"></v-radio>
-                                                <v-radio value="-1" label="Difficult to know"></v-radio>
+                                                <v-radio value="difficult_to_know" label="Difficult to know"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -829,7 +829,7 @@
                                             <v-col cols="3" class="py-0">
                                                 <v-checkbox
                                                     v-model="form.other_congenital_anomalies_involved_system"
-                                                    value="Upper limb"
+                                                    value="Upper-limb"
                                                     label="Upper limb"
                                                     vid="other_congenital_anomalies_involved_system"
                                                     :data-optional="true"
@@ -840,7 +840,7 @@
                                             <v-col cols="3" class="py-0">
                                                 <v-checkbox
                                                     v-model="form.other_congenital_anomalies_involved_system"
-                                                    value="Lower limb"
+                                                    value="Lower-limb"
                                                     label="Lower limb"
                                                     vid="other_congenital_anomalies_involved_system"
                                                     :data-optional="true"
@@ -1353,14 +1353,13 @@
                         type="submit"
                         color="primary"
                         :loading="processing"
-                        :disabled="invalid"
                     >
                         Save and Proceed
                     </v-btn>
                 </v-card-actions>
             </v-card>
         </v-form>
-    </validation-observer>
+    <!-- </validation-observer> -->
 </template>
 
 <script>
@@ -1511,7 +1510,7 @@ export default {
         },
         validateAndProceed() {
             this.processing = true
-            this.$refs.observer.validate() ? this.$emit('save', this.form) : false;
+            this.$emit('save', this.form);
             this.processing = false
         },
         resetFormData() {

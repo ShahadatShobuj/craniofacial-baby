@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="checkValidation('1')"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -43,10 +43,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('2') ? checkValidation('2') : false"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -55,7 +55,7 @@
                             class="py-1"
                         >
                             Age of the baby
-                        </v-stepper-step>                    
+                        </v-stepper-step>
                         <v-stepper-content step="2" data-question="2" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
@@ -97,10 +97,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        
-                        <v-stepper-step editable 
+
+                        <v-stepper-step editable
                             :complete="hasState('3') ? checkValidation('3') : false"
                             :rules="hasState('3') ? [() => checkValidation('3')] : [() => true]"
                             edit-icon="$complete"
@@ -109,7 +109,7 @@
                             data-question="3"
                         >
                             Name of father
-                        </v-stepper-step>                    
+                        </v-stepper-step>
                         <v-stepper-content step="3" data-question="3" class="my-0 py-0">
                             <v-stepper-items>
                                 <input-text
@@ -137,10 +137,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('4') ? checkValidation('4') : false"
                             :rules="hasState('4') ? [() => checkValidation('4')] : [() => true]"
                             edit-icon="$complete"
@@ -177,10 +177,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('5') ? checkValidation('5') : false"
                             :rules="hasState('5') ? [() => checkValidation('5')] : [() => true]"
                             edit-icon="$complete"
@@ -218,10 +218,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('6') ? checkValidation('6') : false"
                             :rules="hasState('6') ? [() => checkValidation('6')] : [() => true]"
                             edit-icon="$complete"
@@ -230,7 +230,7 @@
                             class="py-1"
                         >
                             Address
-                        </v-stepper-step>                    
+                        </v-stepper-step>
                         <v-stepper-content step="6" data-question="6" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -242,7 +242,7 @@
                                             vid="address_type"
                                             @keydown.enter="checkValidation('6') ? question++ : null"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.address.address_type"
                                                 row
                                                 :error-messages="errors"
@@ -313,10 +313,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('7') ? checkValidation('7') : false"
                             :rules="hasState('7') ? [() => checkValidation('7')] : [() => true]"
                             edit-icon="$complete"
@@ -368,10 +368,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('8') ? checkValidation('8') : false"
                             :rules="hasState('8') ? [() => checkValidation('8')] : [() => true]"
                             edit-icon="$complete"
@@ -380,7 +380,7 @@
                             data-question="8"
                         >
                             Email
-                        </v-stepper-step>                    
+                        </v-stepper-step>
                         <v-stepper-content step="8" data-question="8" class="my-0 py-0">
                             <v-stepper-items>
                                 <input-email
@@ -408,10 +408,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        
-                        <v-stepper-step editable 
+
+                        <v-stepper-step editable
                             :complete="hasState('9') ? checkValidation('9') : false"
                             :rules="hasState('9') ? [() => checkValidation('9')] : [() => true]"
                             edit-icon="$complete"
@@ -421,7 +421,7 @@
                         >
                             Consanguinity of marriage
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="9" data-question="9" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -432,7 +432,7 @@
                                             name="Address Type"
                                             vid="address_type"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.consanguineous_marriage"
                                                 row
                                                 :error-messages="errors"
@@ -455,7 +455,7 @@
                                             name="Address Type"
                                             vid="address_type"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.consanguinity"
                                                 row
                                                 :error-messages="errors"
@@ -484,10 +484,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        
-                        <v-stepper-step editable 
+
+                        <v-stepper-step editable
                             :complete="hasState('10') ? checkValidation('10') : false"
                             :rules="hasState('10') ? [() => checkValidation('10')] : [() => true]"
                             edit-icon="$complete"
@@ -497,7 +497,7 @@
                         >
                             Family H/O  Cleft Lip/Cleft Palate in first degree relatives:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="10" data-question="10" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -508,7 +508,7 @@
                                             name="Family Cleft"
                                             vid="family_cleft"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.family_cleft"
                                                 row
                                                 :error-messages="errors"
@@ -531,7 +531,7 @@
                                             name="Cleft relative"
                                             vid="cleft_relative"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.family_cleft_relatives"
                                                 row
                                                 :error-messages="errors"
@@ -560,10 +560,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('11') ? checkValidation('11') : false"
                             :rules="hasState('11') ? [() => checkValidation('11')] : [() => true]"
                             edit-icon="$complete"
@@ -573,7 +573,7 @@
                         >
                             H/O preconceptional folic acid supplementation:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="11" data-question="11" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -582,7 +582,7 @@
                                     name="Folic acid supplementation"
                                     vid="folic_acid_supplementation"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.folic_acid_supplementation"
                                         row
                                         :error-messages="errors"
@@ -608,10 +608,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('12') ? checkValidation('12') : false"
                             :rules="hasState('12') ? [() => checkValidation('12')] : [() => true]"
                             edit-icon="$complete"
@@ -621,7 +621,7 @@
                         >
                             Maternity Diet:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="12" data-question="12" class="my-0 py-0">
                             <v-stepper-items>
                                 <validation-provider
@@ -630,7 +630,7 @@
                                     name="Maternity Diet"
                                     vid="maternity_diet"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="form.maternity_diet"
                                         row
                                         :error-messages="errors"
@@ -653,9 +653,9 @@
                     </v-stepper>
                 </v-card-text>
                 <v-card-actions class="pl-15">
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -759,7 +759,7 @@ export default {
         },
         hasState(question) {
             let hasState = false;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
                 const inputs = target.querySelectorAll('.v-input')
@@ -782,10 +782,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -797,18 +797,18 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true
-            this.$refs.observer.validate() ? this.$emit('save', this.form) : false;
+            this.$emit('save', this.form);
             this.processing = false
         },
         resetFormData() {

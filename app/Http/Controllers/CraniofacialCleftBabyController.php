@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CraniofacialCleftBabyController extends Controller
 {
-    // /**
-    //  * Create a new controller instance.
-    //  *
-    //  * @return void
-    //  */
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -35,13 +35,12 @@ class CraniofacialCleftBabyController extends Controller
     }
 
     public function craniofacial_baby_show (Request $request,  CraniofacialCleftBaby $cleft_baby) {
-        // return view('craniofacial_baby');
-        return view('craniofacial_baby', ['cleft_baby' => $cleft_baby->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first()]);
+        return view('craniofacial_baby');
+        // return view('craniofacial_baby', ['cleft_baby' => $cleft_baby->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first()]);
     }
 
     public function craniofacial_baby (Request $request) {
         $baby = CraniofacialCleftBaby::findOrFail($request->cleft_baby)->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first();
-        // return 'test';
         return response()->json($baby);
     }
 
@@ -56,18 +55,28 @@ class CraniofacialCleftBabyController extends Controller
         $contactDetails = $inputs['cleftBaby'];
         $addressInput = $contactDetails['address'];
         unset($contactDetails['address']);
+        unset($contactDetails['complete']);
         $clefBabyInput = $contactDetails;
         $user = auth()->user();
         $clefBabyInput['created_by'] = $user->name;
         $fatherInput = $inputs['father'];
+        unset($fatherInput['complete']);
         $motherInput = $inputs['mother'];
+        unset($motherInput['complete']);
         $newbornInput = $inputs['newborn'];
+        unset($newbornInput['complete']);
         $deliveryInput = $inputs['delivery'];
+        unset($deliveryInput['complete']);
         $pregnancyInput = $inputs['pregnancy'];
+        unset($pregnancyInput['complete']);
         $speechInput = $inputs['speech_development'];
+        unset($speechInput['complete']);
         $hearingInput = $inputs['hearing_development'];
+        unset($hearingInput['complete']);
         $treatmentInput = $inputs['treatment'];
+        unset($treatmentInput['complete']);
         $outcomeInput = $inputs['outcome'];
+        unset($outcomeInput['complete']);
         // $clefBabyInput = $request->except(['outcome', 'cleftBaby.address']);
         // $addressInput = $request->only('cleftBaby.address');
         // return $user->name;

@@ -1,5 +1,5 @@
 <template>
-  <validation-observer tag="div" ref="observer" v-slot="{ invalid }">
+  <!-- <validation-observer tag="div" ref="observer" v-slot="{ invalid }"> -->
     <v-form
       ref="form"
       name="pregnancy"
@@ -1123,14 +1123,13 @@
             type="submit"
             color="primary"
             :loading="processing"
-            :disabled="invalid"
           >
             Save and Proceed
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-form>
-  </validation-observer>
+  <!-- </validation-observer> -->
 </template>
 
 <script>

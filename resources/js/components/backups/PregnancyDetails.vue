@@ -1,5 +1,5 @@
 <template>
-    <validation-observer 
+    <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? checkValidation('1') && waterContaminationTypeValidation : false"
                             :rules="hasState('1') ? [() => checkValidation('1') && waterContaminationTypeValidation] : [() => true]"
                             edit-icon="$complete"
@@ -24,7 +24,7 @@
                             Contamination of drinking water:
                             <span v-if="!waterContaminationTypeValidation">Please, select contamination type.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="1" data-question="1" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -35,7 +35,7 @@
                                             name="Contamination of water"
                                             vid="contamination_drinking_water"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.contamination_drinking_water"
                                                 row
                                                 :error-messages="errors"
@@ -104,10 +104,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('2') ? checkValidation('2') : false"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -117,7 +117,7 @@
                         >
                             Hazardous waste site:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="2" data-question="2" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -128,7 +128,7 @@
                                             name="Hazardous waste site"
                                             vid="hazardous_waste_site"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.hazardous_waste_site"
                                                 row
                                                 :error-messages="errors"
@@ -157,10 +157,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('3') ? checkValidation('3') && airPollutionTypeValidation : false"
                             :rules="hasState('3') ? [() => checkValidation('3') && airPollutionTypeValidation] : [() => true]"
                             edit-icon="$complete"
@@ -171,7 +171,7 @@
                             Air Pollution:
                             <span v-if="!airPollutionTypeValidation">Please, select contamination type.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="3" data-question="3" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row>
@@ -182,7 +182,7 @@
                                             name="Air Pollution"
                                             vid="air_pollution"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.air_pollution"
                                                 row
                                                 :error-messages="errors"
@@ -290,10 +290,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('4') ? checkValidation('4') : false"
                             :rules="hasState('4') ? [() => checkValidation('4')] : [() => true]"
                             edit-icon="$complete"
@@ -303,7 +303,7 @@
                         >
                             Pesiticides Expose:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="4" data-question="4" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -314,7 +314,7 @@
                                             name="Pesiticides Expose"
                                             vid="pasticides_expose"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.pasticides_expose"
                                                 row
                                                 :error-messages="errors"
@@ -343,10 +343,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('5') ? checkValidation('5') : false"
                             :rules="hasState('5') ? [() => checkValidation('5')] : [() => true]"
                             edit-icon="$complete"
@@ -356,7 +356,7 @@
                         >
                             Physical activities during pregnancy:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="5" data-question="5" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -367,7 +367,7 @@
                                             name="Physical activities during pregnancy"
                                             vid="physical_activities_during_pregnancy"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.physical_activities_during_pregnancy"
                                                 row
                                                 :error-messages="errors"
@@ -397,10 +397,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('6') ? checkValidation('6') && intercourseTimeValidation : false"
                             :rules="hasState('6') ? [() => checkValidation('6') && intercourseTimeValidation] : [() => true]"
                             edit-icon="$complete"
@@ -411,7 +411,7 @@
                             Sexual intercourse:
                             <span v-if="!intercourseTimeValidation">Please, select a time phase.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="6" data-question="6" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-end">
@@ -423,7 +423,7 @@
                                             name="Sex during Pregnancy"
                                             vid="intercourse_during_pregnancy"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.intercourse_during_pregnancy"
                                                 row
                                                 :error-messages="errors"
@@ -433,7 +433,7 @@
                                                 <v-radio :value="true" label="Yes"></v-radio>
                                                 <v-radio :value="false" label="No"></v-radio>
                                             </v-radio-group>
-                                        </validation-provider>                                                
+                                        </validation-provider>
                                     </v-col>
                                     <v-col cols="11" class="py-0">
                                         <v-row v-if="form.intercourse_during_pregnancy">
@@ -527,10 +527,10 @@
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
-                                        </v-row>  
-                                    </v-col>                                                                                      
+                                        </v-row>
+                                    </v-col>
                                 </v-row>
-                                
+
                                 <v-row class="justify-content-end">
                                     <v-col cols="3" class="py-0">(ii) Post conception: resume of coitus:</v-col>
                                     <v-col cols="9" class="py-0">
@@ -540,7 +540,7 @@
                                             name="Post concept intercourse"
                                             vid="intercourse_during_post_conception"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.intercourse_during_post_conception"
                                                 row
                                                 :error-messages="errors"
@@ -570,10 +570,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('7') ? checkValidation('7') : false"
                             :rules="hasState('7') ? [() => checkValidation('7')] : [() => true]"
                             edit-icon="$complete"
@@ -584,7 +584,7 @@
                             Stress:
                             <span v-if="!checkValidation('7')">Please, select reason of stress.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="7" data-question="7" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -595,7 +595,7 @@
                                             name="Stress"
                                             vid="stress"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.stress"
                                                 row
                                                 :error-messages="errors"
@@ -611,9 +611,9 @@
                                         <v-row>
                                             If yes,
                                         </v-row>
-                                        
+
                                         <v-row class="">
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.stress_type"
                                                 row
                                                 :error-messages="errors"
@@ -644,10 +644,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('8') ? checkValidation('8') : false"
                             :rules="hasState('8') ? [() => checkValidation('8')] : [() => true]"
                             edit-icon="$complete"
@@ -657,7 +657,7 @@
                         >
                             Gestetional Diabetes Mellitus:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="8" data-question="8" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -668,7 +668,7 @@
                                             name="Gestetional Diabetes Mellitus"
                                             vid="gestetional_diabetes_mellitus"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.gestetional_diabetes_mellitus"
                                                 row
                                                 :error-messages="errors"
@@ -697,10 +697,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('9') ? checkValidation('9') : false"
                             :rules="hasState('9') ? [() => checkValidation('9')] : [() => true]"
                             edit-icon="$complete"
@@ -711,7 +711,7 @@
                             Fever:
                             <span v-if="checkValidation('9')">Please, select fever period.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="9" data-question="9" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -722,7 +722,7 @@
                                             name="Fever"
                                             vid="fever"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.fever"
                                                 row
                                                 :error-messages="errors"
@@ -744,7 +744,7 @@
                                             name="Fever"
                                             vid="fever"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.fever_period"
                                                 row
                                                 :error-messages="errors"
@@ -786,10 +786,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('10') ? checkValidation('10') : false"
                             :rules="hasState('10') ? [() => checkValidation('10')] : [() => true]"
                             edit-icon="$complete"
@@ -800,7 +800,7 @@
                             Accidents/trauma to abdomen during pregnancy:
                             <span v-if="!checkValidation('10')">Please, select trauma period.</span>
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="10" data-question="10" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="">
@@ -811,7 +811,7 @@
                                             name="Abdominal Trauma"
                                             vid="abdominal_trauma"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.abdominal_trauma"
                                                 row
                                                 :error-messages="errors"
@@ -833,7 +833,7 @@
                                             name="Abdominal Trauma"
                                             vid="abdominal_trauma"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.abdominal_trauma_period"
                                                 row
                                                 :error-messages="errors"
@@ -875,10 +875,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('11') ? checkValidation('11') : false"
                             :rules="hasState('11') ? [() => checkValidation('11')] : [() => true]"
                             edit-icon="$complete"
@@ -888,7 +888,7 @@
                         >
                             Time of rupture of amniotic membranes:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="11" data-question="11" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -899,7 +899,7 @@
                                             name="Amniotic membranes rupture"
                                             vid="amniotic_membranes_rupture"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.amniotic_membranes_rupture"
                                                 row
                                                 :error-messages="errors"
@@ -929,10 +929,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('12') ? checkValidation('12') : false"
                             :rules="hasState('12') ? [() => checkValidation('12')] : [() => true]"
                             edit-icon="$complete"
@@ -942,7 +942,7 @@
                         >
                             Amount of amniotic fluid:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="12" data-question="12" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -953,7 +953,7 @@
                                             name="Amniotic fluid amount"
                                             vid="amniotic_fluid_amount"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.amniotic_fluid_amount"
                                                 row
                                                 :error-messages="errors"
@@ -983,10 +983,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('13') ? checkValidation('13') : false"
                             :rules="hasState('13') ? [() => checkValidation('13')] : [() => true]"
                             edit-icon="$complete"
@@ -996,7 +996,7 @@
                         >
                             Early amniotic fluid leak:
                         </v-stepper-step>
-                    
+
                         <v-stepper-content step="13" data-question="13" class="my-0 py-0">
                             <v-stepper-items>
                                 <v-row class="justify-content-center">
@@ -1007,7 +1007,7 @@
                                             name="Early amniotic fluid leak"
                                             vid="early_amniotic_fluid_leak"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="form.early_amniotic_fluid_leak"
                                                 row
                                                 :error-messages="errors"
@@ -1041,9 +1041,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -1170,10 +1170,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -1185,18 +1185,18 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true
-            this.$refs.observer.validate() ? this.$emit('save', this.form) : false;
+            this.$emit('save', this.form);
             this.processing = false
         },
         resetFormData() {

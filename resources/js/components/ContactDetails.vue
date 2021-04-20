@@ -1,9 +1,9 @@
 <template>
-    <validation-observer
+    <!-- <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
-    >
+    > -->
         <v-form
             ref="form"
             name="cleftBaby"
@@ -33,7 +33,7 @@
                                     counter="50"
                                     autocomplete
                                     :autofocus="question == 1"
-                                    @keydown.enter="!checkValidation('1') || question++"
+                                    @keydown.enter.prevent="!checkValidation('1') || question++"
                                 />
                             </v-stepper-items>
                             <v-btn
@@ -67,7 +67,7 @@
                                             vid="operation_age"
                                             autocomplete
                                             :autofocus="question == 2"
-                                            @keydown.enter="checkValidation('2') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('2') ? question++ : null"
                                         />
                                     </v-col>
                                     <v-col cols="6" class="py-0">
@@ -76,8 +76,9 @@
                                             rules="required|max:50"
                                             label="Current Age"
                                             vid="current_age"
+                                            :data-optional="true"
                                             autocomplete
-                                            @keydown.enter="checkValidation('2') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('2') ? question++ : null"
                                         />
                                     </v-col>
                                 </v-row>
@@ -120,7 +121,7 @@
                                     counter="50"
                                     autocomplete
                                     :autofocus="question == 3"
-                                    @keydown.enter="checkValidation('3') ? question++ : null"
+                                    @keydown.enter.prevent="checkValidation('3') ? question++ : null"
                                 />
                             </v-stepper-items>
                             <v-btn
@@ -160,7 +161,7 @@
                                     counter="50"
                                     autocomplete
                                     :autofocus="question == 4"
-                                    @keydown.enter="checkValidation('4') ? question++ : null"
+                                    @keydown.enter.prevent="checkValidation('4') ? question++ : null"
                                 />
                             </v-stepper-items>
                             <v-btn
@@ -200,7 +201,7 @@
                                     counter="50"
                                     autocomplete
                                     :autofocus="question == 5"
-                                    @keydown.enter="checkValidation('5') ? question++ : null"
+                                    @keydown.enter.prevent="checkValidation('5') ? question++ : null"
                                 />
                             </v-stepper-items>
                             <v-btn
@@ -240,7 +241,7 @@
                                             v-slot="{ errors, valid, dirty }"
                                             name="Address Type"
                                             vid="address_type"
-                                            @keydown.enter="checkValidation('6') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('6') ? question++ : null"
                                         >
                                             <v-radio-group
                                                 v-model="form.address.address_type"
@@ -263,7 +264,7 @@
                                             label="Village/Road"
                                             vid="address_village"
                                             autocomplete
-                                            @keydown.enter="checkValidation('6') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('6') ? question++ : null"
                                         />
                                     </v-col>
                                     <v-col cols="6" class="py-0">
@@ -273,7 +274,7 @@
                                             label="Upazilla"
                                             vid="address_upazilla"
                                             autocomplete
-                                            @keydown.enter="checkValidation('6') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('6') ? question++ : null"
                                         />
                                     </v-col>
                                     <v-col cols="6" class="py-0">
@@ -283,7 +284,7 @@
                                             label="District"
                                             vid="address_district"
                                             autocomplete
-                                            @keydown.enter="checkValidation('6') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('6') ? question++ : null"
                                         />
                                     </v-col>
                                     <v-col cols="6" class="py-0">
@@ -293,7 +294,7 @@
                                             label="Division"
                                             vid="address_division"
                                             autocomplete
-                                            @keydown.enter="checkValidation('6') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('6') ? question++ : null"
                                         />
                                     </v-col>
                                 </v-row>
@@ -337,7 +338,7 @@
                                             vid="first_contact"
                                             autocomplete
                                             :autofocus="question == 7"
-                                            @keydown.enter="checkValidation('7') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('7') ? question++ : null"
                                         />
                                     </v-col>
                                     <v-col cols="6" class="py-0">
@@ -348,7 +349,7 @@
                                             vid="alternate_contact"
                                             :data-optional="true"
                                             autocomplete
-                                            @keydown.enter="checkValidation('7') ? question++ : null"
+                                            @keydown.enter.prevent="checkValidation('7') ? question++ : null"
                                         />
                                     </v-col>
                                 </v-row>
@@ -626,14 +627,13 @@
                         type="submit"
                         color="primary"
                         :loading="processing"
-                        :disabled="invalid"
                     >
                         Save and Proceed
                     </v-btn>
                 </v-card-actions>
             </v-card>
         </v-form>
-    </validation-observer>
+    <!-- </validation-observer> -->
 </template>
 
 <script>
@@ -768,7 +768,7 @@ export default {
         },
         validateAndProceed() {
             this.processing = true
-            this.$refs.observer.validate() ? this.$emit('save', this.form) : false;
+            this.$emit('save', this.form);
             this.processing = false
         },
         resetFormData() {

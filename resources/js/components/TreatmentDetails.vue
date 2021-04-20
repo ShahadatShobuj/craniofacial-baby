@@ -1,9 +1,9 @@
 <template>
-    <validation-observer
+    <!-- <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
-    >
+    > -->
         <v-form
             ref="form"
             name="treatment"
@@ -181,7 +181,7 @@
                                             rules="required"
                                             v-slot="{ errors, valid, dirty }"
                                             name="Eyelid surgery"
-                                            vid="dissection_of_eyelid_surgery"
+                                            vid="dissection_of_palate_surgery"
                                         >
                                             <v-radio-group
                                                 v-model="form.dissection_of_palate_surgery"
@@ -459,14 +459,13 @@
                         type="submit"
                         color="primary"
                         :loading="processing"
-                        :disabled="invalid"
                     >
                         Save and Proceed
                     </v-btn>
                 </v-card-actions>
             </v-card>
         </v-form>
-    </validation-observer>
+    <!-- </validation-observer> -->
 </template>
 
 <script>
@@ -580,7 +579,7 @@ export default {
         },
         validateAndProceed() {
             this.processing = true
-            this.$refs.observer.validate() ? this.$emit('save', this.form) : false;
+            this.$emit('save', this.form);
             this.processing = false
         },
         resetFormData() {

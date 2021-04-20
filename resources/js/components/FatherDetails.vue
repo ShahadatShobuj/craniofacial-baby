@@ -1,9 +1,9 @@
 <template>
-    <validation-observer 
+    <!-- <validation-observer
         tag="div"
         ref="observer"
         v-slot="{ invalid }"
-    >
+    > -->
         <v-form
             ref="form"
             name="father"
@@ -13,7 +13,7 @@
             <v-card class="py-0">
                 <v-card-text>
                     <v-stepper v-model="question" vertical non-linear class="elevation-0 py-0">
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('1') ? checkValidation('1') : false"
                             :rules="hasState('1') ? [() => checkValidation('1')] : [() => true]"
                             edit-icon="$complete"
@@ -33,7 +33,7 @@
                                             name="Father Occupation"
                                             vid="occupation"
                                         >
-                                            <v-radio-group 
+                                            <v-radio-group
                                                 v-model="father.occupation"
                                                 row
                                                 :error-messages="errors"
@@ -66,10 +66,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('2') ? checkValidation('2') : false"
                             :rules="hasState('2') ? [() => checkValidation('2')] : [() => true]"
                             edit-icon="$complete"
@@ -88,7 +88,7 @@
                                         name="Father Habbit"
                                         vid="habbit"
                                     >
-                                        <v-radio-group 
+                                        <v-radio-group
                                             v-model="father.habbit"
                                             row
                                             :error-messages="errors"
@@ -116,10 +116,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
-                        
-                        <v-stepper-step editable 
+
+                        <v-stepper-step editable
                             :complete="hasState('3') ? checkValidation('3') : false"
                             :rules="hasState('3') ? [() => checkValidation('3')] : [() => true]"
                             edit-icon="$complete"
@@ -137,7 +137,7 @@
                                     name="Congenital Anomaly"
                                     vid="congenital_anomaly"
                                 >
-                                    <v-radio-group 
+                                    <v-radio-group
                                         v-model="father.congenital_anomaly"
                                         row
                                         :error-messages="errors"
@@ -163,10 +163,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('4') && coMorbiditiesValidation"
                             :rules="hasState('4') ? [() => coMorbiditiesValidation] : [() => true]"
                             edit-icon="$complete"
@@ -257,10 +257,10 @@
                                 small
                             >
                                 Continue
-                            </v-btn>                
+                            </v-btn>
                         </v-stepper-content>
 
-                        <v-stepper-step editable 
+                        <v-stepper-step editable
                             :complete="hasState('5') && medicationsValidation"
                             :rules="hasState('5') ? [() => medicationsValidation] : [() => true]"
                             edit-icon="$complete"
@@ -314,7 +314,7 @@
                                         >
                                         </v-checkbox>
                                     </v-col>
-                                    
+
                                     <v-col cols="4" class="py-0">
                                         <v-checkbox
                                             v-model="father.medications"
@@ -377,9 +377,9 @@
                     >
                         Back
                     </v-btn>
-                    <v-btn 
+                    <v-btn
                         small
-                        type="reset" 
+                        type="reset"
                         color="secondary"
                         :loading="processing"
                     >
@@ -390,14 +390,13 @@
                         type="submit"
                         color="primary"
                         :loading="processing"
-                        :disabled="invalid"
                     >
                         Save and Proceed
                     </v-btn>
                 </v-card-actions>
             </v-card>
         </v-form>
-    </validation-observer>
+    <!-- </validation-observer> -->
 </template>
 
 <script>
@@ -415,8 +414,8 @@ export default {
                 // congenital_anomaly: true,
                 // co_morbidities: ['DM'],
                 // medications: ['OCP'],
-                
-                
+
+
                 occupation: null,
                 habbit: null,
                 congenital_anomaly: null,
@@ -469,10 +468,10 @@ export default {
         },
         checkValidation(question) {
             let valid = true;
-            
+
             if(this.$el) {
                 const target = this.$el.querySelector(`[class*='v-stepper__content'][data-question='${question}']`);
-                
+
                 const inputs = target.querySelectorAll('.v-input')
                 for (let index = 0; index < inputs.length; index++) {
                     const element = inputs[index];
@@ -484,14 +483,14 @@ export default {
                         continue;
                     } else {
                         if (!element.classList.contains('v-input--has-state') || !element.classList.contains('success--text')){
-                            valid = false; 
+                            valid = false;
                             break;
                         }
                     }
                 }
             }
-            
-            return valid; 
+
+            return valid;
         },
         validateAndProceed() {
             this.processing = true
