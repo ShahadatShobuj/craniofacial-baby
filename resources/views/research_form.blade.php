@@ -814,11 +814,9 @@
                 },
                 saveAndProceed(formData) {
                     const clause = event.target.name;
-                    console.log(clause);
                     this.form[clause].complete = true;
                     // this.form[clause] = Object.assign(this.form[clause], formData);
                     this.form[clause] = Object.assign(this.form[clause], formData);
-                    console.log(this.form)
                     return this.step < 10 ? this.step++ : false;
                 },
                 reset() {
@@ -826,7 +824,6 @@
                     this.form[clause] = {};
                     // this.form = Object.assign(this.form, formData);
                     // this.stepperState = [];
-                    console.log(this.form)
                     return true;
                 },
                 submit() {
@@ -841,7 +838,6 @@
                             });
                         })
                         .catch(e => function() {
-                            console.log(e)
                             alert(e);
                         });
                 }
