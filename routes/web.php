@@ -40,5 +40,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/research-data/get', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'craniofacial_babies_data'])->name('get.research-data');
     Route::get('/research-data/collect', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'research_form'])->name('research-data.collect');
     Route::post('/research-data/collect', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'save'])->name('research-data.save');
-    Route::post('validate/email', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'checkEmail'])->name('validate.email');
+    Route::post('/research-data/update', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'update'])->name('research-data.update');
+    // Route::post('validate/email', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'checkEmail'])->name('validate.email');
 });

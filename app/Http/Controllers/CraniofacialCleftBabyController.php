@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\EmailRequest;
 use App\Http\Requests\ResearchDataRequest;
 use App\Models\CraniofacialCleftBaby;
+use App\Models\Mother;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -56,9 +57,9 @@ class CraniofacialCleftBabyController extends Controller
         $addressInput = $contactDetails['address'];
         unset($contactDetails['address']);
         unset($contactDetails['complete']);
-        $clefBabyInput = $contactDetails;
+        $cleftBabyInput = $contactDetails;
         $user = auth()->user();
-        $clefBabyInput['created_by'] = $user->name;
+        $cleftBabyInput['created_by'] = $user->name;
         $fatherInput = $inputs['father'];
         unset($fatherInput['complete']);
         $motherInput = $inputs['mother'];
@@ -77,13 +78,13 @@ class CraniofacialCleftBabyController extends Controller
         unset($treatmentInput['complete']);
         $outcomeInput = $inputs['outcome'];
         unset($outcomeInput['complete']);
-        // $clefBabyInput = $request->except(['outcome', 'cleftBaby.address']);
+        // $cleftBabyInput = $request->except(['outcome', 'cleftBaby.address']);
         // $addressInput = $request->only('cleftBaby.address');
         // return $user->name;
 
         DB::beginTransaction();
         try {
-            $CleftBaby = CraniofacialCleftBaby::create($clefBabyInput);
+            $CleftBaby = CraniofacialCleftBaby::create($cleftBabyInput);
             $address = $CleftBaby->address()->create($addressInput);
             $father = $CleftBaby->father()->create($fatherInput);
             $mother = $CleftBaby->mother()->create($motherInput);
@@ -99,9 +100,63 @@ class CraniofacialCleftBabyController extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
-            return response()->json(['status' => 'Error', 'message' => $e], 401);
+            return response()->json(['status' => 'Error', 'message' => $e->getMessage()], 401);
         }
 
         return response()->json(['status' => 'Success', 'message' => 'Data saved successfully.']);
+    }
+
+    public function update (Request $request) {
+        $babyDetails = $request->input();
+        $user = auth()->user();
+        // $babyDetails = $babyDetails['cleftBaby'];
+        $addressInput = $babyDetails['address'];
+        unset($babyDetails['address']);
+        $cleftBabyInput['created_by'] = $user->name;
+        $fatherInput = $babyDetails['father'];
+        unset($babyDetails['father']);
+
+        $newbornInput = $babyDetails['mother']['newborn'];
+        unset($babyDetails['mother']['newborn']);
+        $deliveryInput = $babyDetails['mother']['delivery'];
+        unset($babyDetails['mother']['delivery']);
+        $pregnancyInput = $babyDetails['mother']['pregnancy'];
+        unset($babyDetails['mother']['pregnancy']);
+        $motherInput = $babyDetails['mother'];
+        unset($babyDetails['mother']);
+        $speechInput = $babyDetails['speech_development'];
+        unset($babyDetails['speech_development']);
+        $hearingInput = $babyDetails['hearing_development'];
+        unset($babyDetails['hearing_development']);
+        $treatmentInput = $babyDetails['treatment'];
+        unset($babyDetails['treatment']);
+        $outcomeInput = $babyDetails['outcome'];
+        unset($babyDetails['outcome']);
+        $cleftBabyInput = $babyDetails;
+
+        DB::beginTransaction();
+            try {
+            $CleftBaby = CraniofacialCleftBaby::findOrFail($cleftBabyInput['id']);
+            $CleftBaby->update($cleftBabyInput);
+            $address = $CleftBaby->address->update($addressInput);
+            $father = $CleftBaby->father->update($fatherInput);
+            $mother = Mother::findOrFail($motherInput['id']);
+            $mother->update($motherInput);
+            $pregnancy = $mother->pregnancy->update($pregnancyInput);
+            $delivery = $mother->delivery->update($deliveryInput);
+            $newborn = $mother->newborn->update($newbornInput);
+            $speechDevelopment = $CleftBaby->speechDevelopment->update($speechInput);
+            $hearingDevelopment = $CleftBaby->hearingDevelopment->update($hearingInput);
+            $treatment = $CleftBaby->treatment->update($treatmentInput);
+            $outcome = $CleftBaby->outcome->update($outcomeInput);
+
+            DB::commit();
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json(['status' => 'Error', 'message' => $e->getMessage()], 401);
+        }
+
+        return response()->json(['status' => 'Success', 'message' => 'Data updated successfully.']);
     }
 }

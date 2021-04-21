@@ -559,11 +559,12 @@
                                                 :success="valid && dirty"
                                                 class="my-0"
                                             >
-                                                <v-radio value="yes" label="Yes"></v-radio>
-                                                <v-radio value="no" label="No"></v-radio>
+                                                <v-radio value="Yes" label="Yes"></v-radio>
+                                                <v-radio value="No" label="No"></v-radio>
+                                                <v-radio value="Not Applicable" label="Not Applicable"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
-                                        <v-row v-if="form.vpi === 'yes'">
+                                        <v-row v-if="form.vpi === 'Yes'">
                                             <v-col md="3" class="py-0">
                                                 If yes,
                                             </v-col>

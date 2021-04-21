@@ -169,7 +169,7 @@
                                                 </validation-provider>
                                             </v-col>
                                             <v-col cols="3" class="py-0">
-                                                (শ) |S|:
+                                                (শ) |Sh|:
                                             </v-col>
                                             <v-col cols="9" class="py-0">
                                                 <validation-provider
