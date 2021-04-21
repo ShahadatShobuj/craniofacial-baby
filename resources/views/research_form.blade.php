@@ -533,9 +533,9 @@
                             // email: null,
                             consanguineous_marriage: null,
                             consanguinity: null,
-                            family_cleft: null,
+                            family_cleft: 0,
                             family_cleft_relatives: null,
-                            folic_acid_supplementation: null,
+                            folic_acid_supplementation: 0,
                             maternity_diet: null,
                         },
                         delivery: {
