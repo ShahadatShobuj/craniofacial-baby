@@ -822,7 +822,7 @@ export default {
                 occupation: null,
                 habbit: null,
                 number_of_cigerettes: null,
-                congenital_anomaly: null,
+                congenital_anomaly: 0,
                 co_morbidities: [],
                 medications: [],
                 exposure_to_insecticides: null,

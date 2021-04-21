@@ -418,7 +418,7 @@ export default {
 
                 occupation: null,
                 habbit: null,
-                congenital_anomaly: null,
+                congenital_anomaly: 0,
                 co_morbidities: [],
                 medications: [],
             },
