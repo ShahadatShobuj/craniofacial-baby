@@ -494,7 +494,8 @@ export default {
         },
         validateAndProceed() {
             this.processing = true
-            this.$refs.observer.validate() ? this.$emit('save', this.father) : false;
+            // this.$refs.observer.validate() ? this.$emit('save', this.father) : false;
+            this.$emit('save', this.father);
             this.processing = false
         },
         resetFormData() {
