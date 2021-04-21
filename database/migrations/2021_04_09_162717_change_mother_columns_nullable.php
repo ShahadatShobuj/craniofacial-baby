@@ -19,6 +19,7 @@ class ChangeMotherColumnsNullable extends Migration
             $table->json('co_morbidities')->nullable()->change();
             $table->json('medications')->nullable()->change();
             $table->string('exposure_to_insecticides')->nullable()->change();
+            $table->string('congenital_anomaly')->nullable()->change();
             $table->string('number_of_pregnancies')->nullable()->change();
             $table->string('ho_pregnancy_loss')->nullable()->change();
             $table->string('ho_pregnancy_termination')->nullable()->change();
@@ -39,6 +40,7 @@ class ChangeMotherColumnsNullable extends Migration
             $table->json('co_morbidities')->nullable(false)->change();
             $table->json('medications')->nullable(false)->change();
             $table->string('exposure_to_insecticides')->nullable(false)->change();
+            $table->string('congenital_anomaly')->nullable(false)->change();
             $table->string('number_of_pregnancies')->nullable(false)->change();
             $table->string('ho_pregnancy_loss')->nullable(false)->change();
             $table->string('ho_pregnancy_termination')->nullable(false)->change();

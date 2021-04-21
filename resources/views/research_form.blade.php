@@ -531,7 +531,7 @@
                             first_contact: null,
                             alternate_contact: null,
                             // email: null,
-                            consanguineous_marriage: null,
+                            consanguineous_marriage: 0,
                             consanguinity: null,
                             family_cleft: 0,
                             family_cleft_relatives: null,

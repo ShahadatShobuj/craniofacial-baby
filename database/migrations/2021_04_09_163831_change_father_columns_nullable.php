@@ -17,6 +17,7 @@ class ChangeFatherColumnsNullable extends Migration
             $table->string('occupation')->nullable()->change();
             $table->string('habbit')->nullable()->change();
             $table->json('co_morbidities')->nullable()->change();
+            $table->string('congenital_anomaly')->nullable()->change();
             $table->json('medications')->nullable()->change();
         });
     }
@@ -32,6 +33,7 @@ class ChangeFatherColumnsNullable extends Migration
             $table->string('occupation')->nullable(false)->change();
             $table->string('habbit')->nullable(false)->change();
             $table->json('co_morbidities')->nullable(false)->change();
+            $table->string('congenital_anomaly')->nullable(false)->change();
             $table->json('medications')->nullable(false)->change();
         });
     }
