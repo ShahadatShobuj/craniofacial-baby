@@ -252,7 +252,7 @@ const app = new Vue({
                                     }
                                 },
                                 { data: 'view', name: 'view', render:function(data, type, row){
-                                        return '<a href="/cleft_baby/' + row.id + '/show" class="btn btn-sm btn-primary text-white view"><i class="fa fa-binoculars"></i>View</a> <a href="/cleft_baby/' + row.id + '/telete" class="btn btn-sm btn-alert text-white delete"><i class="fa fa-binoculars"></i>Delete</a>';
+                                        return '<a href="/cleft_baby/' + row.id + '/show" class="btn btn-sm btn-primary text-white view"><i class="fa fa-binoculars"></i>View</a> <a href="/cleft_baby/' + row.id + '/delete" class="btn btn-sm btn-alert text-white delete"><i class="fa fa-binoculars"></i>Delete</a>';
                                     },
                                 },
 
