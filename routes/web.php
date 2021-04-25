@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/cleft_baby/{cleft_baby}/show', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'craniofacial_baby_show'])->name('cleft_baby_show');
+    Route::get('/cleft_baby/{cleft_baby}/delete', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'craniofacial_baby_delete'])->name('cleft_baby_delete');
     Route::post('/cleft_baby', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'craniofacial_baby'])->name('cleft_baby.get');
     Route::get('/research-data', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'craniofacial_babies'])->name('research-data');
     Route::get('/research-data/get', [App\Http\Controllers\CraniofacialCleftBabyController::class, 'craniofacial_babies_data'])->name('get.research-data');

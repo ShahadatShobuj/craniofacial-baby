@@ -40,6 +40,12 @@ class CraniofacialCleftBabyController extends Controller
         // return view('craniofacial_baby', ['cleft_baby' => $cleft_baby->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first()]);
     }
 
+    public function craniofacial_baby_delete (Request $request,  CraniofacialCleftBaby $cleft_baby) {
+        $cleft_baby->delete();
+        return back();
+        // return view('craniofacial_baby', ['cleft_baby' => $cleft_baby->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first()]);
+    }
+
     public function craniofacial_baby (Request $request) {
         $baby = CraniofacialCleftBaby::findOrFail($request->cleft_baby)->with(['address', 'father', 'mother', 'mother.pregnancy', 'mother.delivery', 'mother.newborn', 'speechDevelopment', 'hearingDevelopment', 'treatment', 'outcome'])->first();
         return response()->json($baby);

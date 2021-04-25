@@ -103,7 +103,7 @@
                                                 <th>Maternity Diet</th>
                                                 <th>FA Supplementation</th>
                                                 <th>Date</th>
-                                                <th>View</th>
+                                                <th>Actions</th>
                                             </thead>
                                             <tbody>
                                                 {{-- <tr v-for="(client, index) in clients" :key="index">
@@ -252,7 +252,7 @@ const app = new Vue({
                                     }
                                 },
                                 { data: 'view', name: 'view', render:function(data, type, row){
-                                        return '<a href="/cleft_baby/' + row.id + '/show" class="btn btn-sm btn-primary text-white view"><i class="fa fa-binoculars"></i>View</a>';
+                                        return '<a href="/cleft_baby/' + row.id + '/show" class="btn btn-sm btn-primary text-white view"><i class="fa fa-binoculars"></i>View</a> <a href="/cleft_baby/' + row.id + '/delete" class="btn btn-sm btn-alert text-white view"><i class="fa fa-binoculars"></i>Delete</a>';
                                     },
                                 },
 
