@@ -252,7 +252,7 @@ const app = new Vue({
                                     }
                                 },
                                 { data: 'view', name: 'view', render:function(data, type, row){
-                                        return '<a href="/cleft_baby/' + row.id + '/show" class="btn btn-sm btn-primary text-white view"><i class="fa fa-binoculars"></i>View</a> <a href="/cleft_baby/' + row.id + '/delete" class="btn btn-sm btn-alert text-white view"><i class="fa fa-binoculars"></i>Delete</a>';
+                                        return '<a href="/cleft_baby/' + row.id + '/show" class="btn btn-sm btn-primary text-white view"><i class="fa fa-binoculars"></i>View</a> <a href="/cleft_baby/' + row.id + '/telete" class="btn btn-sm btn-alert text-white delete"><i class="fa fa-binoculars"></i>Delete</a>';
                                     },
                                 },
 
@@ -262,7 +262,11 @@ const app = new Vue({
                     //         { "visible": false, "targets": this.hiddenColumns },
                     //         // { "width": "20%", "targets": 10 },
                     //     ],
-                    drawCallback: function( settings ) {},
+                    drawCallback: function( settings ) {
+                        $('.delete').click(function(e){
+                            if(!confirm('Are you sure?')) e.preventDefault();
+                        });
+                    },
                     initComplete : function( settings, json){
                         // call your function here
                         if(callback) callback();
