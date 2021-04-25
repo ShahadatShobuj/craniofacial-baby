@@ -239,16 +239,6 @@
                                                             </v-radio-group>
                                                         </validation-provider>
                                                     </v-col>
-                                                    <v-col class="py-0" v-if="form.test_pta_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_pta_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_pta_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
-                                                    </v-col>
                                                 </v-row>
                                             </v-col>
                                         </v-row>
@@ -293,16 +283,6 @@
                                                                 <v-radio value="Abnormal" label="Abnormal"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                    </v-col>
-                                                    <v-col class="py-0" v-if="form.test_abr_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_abr_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_abr_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -349,16 +329,6 @@
                                                             </v-radio-group>
                                                         </validation-provider>
                                                     </v-col>
-                                                    <v-col class="py-0" v-if="form.test_srt_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_srt_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_srt_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
-                                                    </v-col>
                                                 </v-row>
                                             </v-col>
                                         </v-row>
@@ -403,16 +373,6 @@
                                                                 <v-radio value="Abnormal" label="Abnormal"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                    </v-col>
-                                                    <v-col class="py-0" v-if="form.test_tympanometry_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_tympanometry_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_tympanometry_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -459,16 +419,6 @@
                                                             </v-radio-group>
                                                         </validation-provider>
                                                     </v-col>
-                                                    <v-col class="py-0" v-if="form.test_play_audiometry_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_play_audiometry_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_play_audiometry_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
-                                                    </v-col>
                                                 </v-row>
                                             </v-col>
                                         </v-row>
@@ -514,16 +464,6 @@
                                                             </v-radio-group>
                                                         </validation-provider>
                                                     </v-col>
-                                                    <v-col class="py-0" v-if="form.test_boa_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_boa_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_boa_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
-                                                    </v-col>
                                                 </v-row>
                                             </v-col>
                                         </v-row>
@@ -568,16 +508,6 @@
                                                                 <v-radio value="Abnormal" label="Abnormal"></v-radio>
                                                             </v-radio-group>
                                                         </validation-provider>
-                                                    </v-col>
-                                                    <v-col class="py-0" v-if="form.test_oae_report === 'Abnormal'">
-                                                        <input-text
-                                                            v-model="form.test_oae_abnormality_type"
-                                                            rules="required|min:2|max:50"
-                                                            label="Abnormality type"
-                                                            vid="test_oae_abnormality_type"
-                                                            :counter="50"
-                                                        >
-                                                        </input-text>
                                                     </v-col>
                                                 </v-row>
                                             </v-col>
@@ -638,25 +568,18 @@ export default {
 
                 test_pta: null,
                 test_pta_report: null,
-                test_pta_abnormality_type: null,
                 test_abr: null,
                 test_abr_report: null,
-                test_abr_abnormality_type: null,
                 test_srt: null,
                 test_srt_report: null,
-                test_srt_abnormality_type: null,
                 test_tympanometry: null,
                 test_tympanometry_report: null,
-                test_tympanometry_abnormality_type: null,
                 test_play_audiometry: null,
                 test_play_audiometry_report: null,
-                test_play_audiometry_abnormality_type: null,
                 test_boa: null,
                 test_boa_report: null,
-                test_boa_abnormality_type: null,
                 test_oae: null,
                 test_oae_report: null,
-                test_oae_abnormality_type: null,
             },
             stepperState: [],
         };

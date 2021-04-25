@@ -525,6 +525,7 @@
                                                 <v-radio value="14" label="14"></v-radio>
                                                 <v-radio value="31" label="31"></v-radio>
                                                 <v-radio value="difficult_to_know" label="Difficult to know"></v-radio>
+                                                <v-radio value="None" label="None"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>
@@ -564,6 +565,7 @@
                                                 <v-radio value="14" label="14"></v-radio>
                                                 <v-radio value="31" label="31"></v-radio>
                                                 <v-radio value="-1" label="Difficult to know"></v-radio>
+                                                <v-radio value="None" label="None"></v-radio>
                                             </v-radio-group>
                                         </validation-provider>
                                     </v-col>

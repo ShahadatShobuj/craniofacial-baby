@@ -6079,20 +6079,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_pta_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_pta_report" id="test_pta_report"
-                                                                            v-model="cleftBaby.hearing_development.test_pta_abnormality_type">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -6160,20 +6146,6 @@
                                                                                 Abnormal
                                                                             </label>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_abr_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_abr_report" id="test_abr_report"
-                                                                            v-model="cleftBaby.hearing_development.test_abr_abnormality_type">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -6247,20 +6219,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_srt_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_srt_report" id="test_srt_report"
-                                                                            v-model="cleftBaby.hearing_development.test_srt_abnormality_type">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -6330,21 +6288,6 @@
                                                                                 Abnormal
                                                                             </label>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_tympanometry_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_tympanometry_report"
-                                                                            id="test_tympanometry_report"
-                                                                            v-model="cleftBaby.hearing_development.test_tympanometry_abnormality_type">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -6423,21 +6366,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_play_audiometry_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_play_audiometry_report"
-                                                                            id="test_play_audiometry_report"
-                                                                            v-model="cleftBaby.hearing_development.test_play_audiometry_abnormality_type">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -6508,20 +6436,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_boa_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_boa_report" id="test_boa_report"
-                                                                            v-model="cleftBaby.hearing_development.test_boa_abnormality_type">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -6589,20 +6503,6 @@
                                                                                 Abnormal
                                                                             </label>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-2">
-                                                                    <label
-                                                                        class="pr-4 font-weight-bold">{{ __('Abnormality: ') }}</label>
-                                                                </div>
-                                                                <div class="col-md-10 pt-0">
-                                                                    <div
-                                                                        class="form-group mb-0 {{ $errors->has('test_oae_report') ? ' has-danger' : '' }} ">
-                                                                        <input type="text" class="form-control"
-                                                                            name="test_oae_report" id="test_oae_report"
-                                                                            v-model="cleftBaby.hearing_development.test_oae_abnormality_type">
                                                                     </div>
                                                                 </div>
                                                             </div>

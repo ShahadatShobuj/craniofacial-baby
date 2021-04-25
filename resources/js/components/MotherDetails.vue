@@ -92,6 +92,7 @@
                                         <v-radio value="Alcohol" label="Alcohol"></v-radio>
                                         <v-radio value="Non smoking" label="Non-smoking tobacco"></v-radio>
                                         <v-radio value="Exposed tobacco" label="Exposed to tobacco"></v-radio>
+                                        <v-radio value="None" label="None"></v-radio>
                                     </v-radio-group>
                                 </validation-provider>
 
