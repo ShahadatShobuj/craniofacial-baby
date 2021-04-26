@@ -82,8 +82,7 @@
                                                     class="flex-grow-1 form-group{{ $errors->has('operation_age') ? ' has-danger' : '' }}">
                                                     <input id="baby_operation_age"
                                                         class="form-control flex-grow-1 {{ $errors->has('operation_age') ? 'is-invalid' : '' }}"
-                                                        name="operation_age" id="input-operation_age" type="number"
-                                                        step="0.1" placeholder="{{ __('Operation age') }}"
+                                                        placeholder="{{ __('Operation age') }}"
                                                         v-model="cleftBaby.operation_age" />
                                                     @if ($errors->has('operation_age'))
                                                         <span id="operation_age-error" class="error text-danger"
@@ -97,7 +96,6 @@
                                                     class="form-group flex-grow-1 {{ $errors->has('current_age') ? 'has-danger' : '' }}">
                                                     <input id="baby_current_age"
                                                         class="form-control flex-grow-1 {{ $errors->has('current_age') ? 'is-invalid' : '' }}"
-                                                        name="current_age" id="input-current_age" type="number" step="0.1"
                                                         placeholder="{{ __('Current age') }}"
                                                         v-model="cleftBaby.current_age" />
                                                     @if ($errors->has('current_age'))
