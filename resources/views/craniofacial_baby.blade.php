@@ -165,14 +165,14 @@
                                                     <div
                                                         class="form-group mb-0 {{ $errors->has('guardian_name') ? ' has-danger' : '' }} ">
                                                         <input type="radio" v-model="cleftBaby.address.address_type"
-                                                            name="address_type" id="urban" value="urban">
+                                                            name="address_type" id="urban" value="Urban">
                                                     </div>
                                                     <label for="urban" class="ml-2 mb-0">Urban</label>
                                                 </div>
                                                 <div class="d-flex align-items-center px-5">
                                                     <div
                                                         class="form-group mb-0 {{ $errors->has('guardian_name') ? ' has-danger' : '' }}">
-                                                        <input type="radio" name="address_type" id="rural" value="rural"
+                                                        <input type="radio" name="address_type" id="rural" value="Rural"
                                                             v-model="cleftBaby.address.address_type">
                                                     </div>
                                                     <label for="rural" class="ml-2 mb-0">Rural</label>
@@ -1646,12 +1646,12 @@
                                                                                 class="form-group mb-0 {{ $errors->has('intercourse_during_post_conception') ? ' has-danger' : '' }} ">
                                                                                 <input type="radio"
                                                                                     name="intercourse_during_post_conception"
-                                                                                    id="intercourse_during_post_conception_more_than_one_month"
-                                                                                    value="more_than_one_month"
+                                                                                    id="intercourse_during_post_conception_more_than_three_month"
+                                                                                    value="more_than_three_month"
                                                                                     v-model="cleftBaby.mother.pregnancy.intercourse_during_post_conception">
                                                                             </div>
                                                                             <label
-                                                                                for="intercourse_during_post_conception_more_than_one_month"
+                                                                                for="intercourse_during_post_conception_more_than_three_month"
                                                                                 class="ml-2 mb-0">> 3 month</label>
                                                                         </div>
                                                                     </div>
@@ -1697,7 +1697,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('stress_type') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="stress_type"
+                                                                    <input type="radio" name="stress_type"
                                                                         id="stress_type_death_of_close_one"
                                                                         value="death_of_close_one"
                                                                         v-model="cleftBaby.mother.pregnancy.stress_type">
@@ -1709,7 +1709,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('stress_type') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="stress_type"
+                                                                    <input type="radio" name="stress_type"
                                                                         id="stress_type_seperation_or_divorce"
                                                                         value="seperation_or_divorce"
                                                                         v-model="cleftBaby.mother.pregnancy.stress_type">
@@ -1722,7 +1722,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('stress_type') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="stress_type"
+                                                                    <input type="radio" name="stress_type"
                                                                         id="stress_type_loss_of_job" value="loss_of_job"
                                                                         v-model="cleftBaby.mother.pregnancy.stress_type">
                                                                 </div>
@@ -1733,7 +1733,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('stress_type') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="stress_type"
+                                                                    <input type="radio" name="stress_type"
                                                                         id="stress_type_familial_difficulties"
                                                                         value="familial_difficulties"
                                                                         v-model="cleftBaby.mother.pregnancy.stress_type">
@@ -1815,7 +1815,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('fever_period') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="fever_period"
+                                                                    <input type="radio" name="fever_period"
                                                                         id="fever_period_first_trimester"
                                                                         value="first_trimester"
                                                                         v-model="cleftBaby.mother.pregnancy.fever_period">
@@ -1828,7 +1828,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('fever_period') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="fever_period"
+                                                                    <input type="radio" name="fever_period"
                                                                         id="fever_period__second_trimester"
                                                                         value="second_trimester"
                                                                         v-model="cleftBaby.mother.pregnancy.fever_period">
@@ -1841,7 +1841,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('fever_period') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="fever_period"
+                                                                    <input type="radio" name="fever_period"
                                                                         id="fever_period__third_trimester"
                                                                         value="third_trimester"
                                                                         v-model="cleftBaby.mother.pregnancy.fever_period">
@@ -1894,7 +1894,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('abdominal_trauma_period') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="abdominal_trauma_period"
+                                                                    <input type="radio" name="abdominal_trauma_period"
                                                                         id="abdominal_trauma_period_first_trimester"
                                                                         value="first_trimester"
                                                                         v-model="cleftBaby.mother.pregnancy.abdominal_trauma_period">
@@ -1908,7 +1908,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('abdominal_trauma_period') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="abdominal_trauma_period"
+                                                                    <input type="radio" name="abdominal_trauma_period"
                                                                         id="abdominal_trauma_period__second_trimester"
                                                                         value="second_trimester"
                                                                         v-model="cleftBaby.mother.pregnancy.abdominal_trauma_period">
@@ -1921,7 +1921,7 @@
                                                             <div class="d-flex align-items-center px-5">
                                                                 <div
                                                                     class="form-group mb-0 {{ $errors->has('abdominal_trauma_period') ? ' has-danger' : '' }} ">
-                                                                    <input type="checkbox" name="abdominal_trauma_period"
+                                                                    <input type="radio" name="abdominal_trauma_period"
                                                                         id="abdominal_trauma_period__third_trimester"
                                                                         value="third_trimester"
                                                                         v-model="cleftBaby.mother.pregnancy.abdominal_trauma_period">
@@ -7234,6 +7234,7 @@
             },
 
             methods: {
+
                 getBaby(cleft_baby) {
                     axios.post("{{ route('cleft_baby.get') }}", {
                             cleft_baby
@@ -7245,6 +7246,7 @@
                             this.button_text = 'Fetch';
                         });
                 },
+
                 submit() {
                     axios.post('/research-data/update', this.cleftBaby)
                         .then(({
