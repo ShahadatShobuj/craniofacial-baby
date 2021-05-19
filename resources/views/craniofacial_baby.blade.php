@@ -7200,7 +7200,7 @@
                 </div>
                 <div class="no-print mt-5 text-right">
                     <button class="btn btn-primary no-print" @click.prevent="submit">Update</button>
-                    <button class="btn btn-info no-print" @click.prevent="print">Print</button>
+                    {{-- <button class="btn btn-info no-print" @click.prevent="print">Print</button> --}}
                 </div>
             </div>
         </div>
@@ -7287,6 +7287,10 @@
             .no-print * {
                 display: none !important;
                 visibility: hidden !important;
+            }
+
+            .mat-radio-inner-circle {
+                box-shadow: 0 0 0 1000px #00695C inset !important;
             }
         }
 
